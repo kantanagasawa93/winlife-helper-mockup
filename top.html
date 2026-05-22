@@ -69,6 +69,17 @@ h2 .sub{display:block;font-size:14px;font-weight:700;color:var(--rose);letter-sp
 @media(max-width:820px){ .hero{min-height:74vh} }
 @media(prefers-reduced-motion:reduce){ .hero-kb{animation:none} }
 
+/* === 左右のピンク波（差し色の装飾。淡く・縦にゆれる） === */
+.sidewave{position:fixed;top:0;bottom:0;width:clamp(26px,4.6vw,84px);z-index:3;pointer-events:none;
+  background-repeat:repeat-y;background-position:left top;background-size:100% 230px;opacity:.55;
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 7%,#000 93%,transparent);
+          mask-image:linear-gradient(to bottom,transparent,#000 7%,#000 93%,transparent)}
+.sidewave.l{left:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='230' viewBox='0 0 90 230'%3E%3Cpath d='M0 0 H56 C28 38 84 77 56 115 C28 153 84 192 56 230 H0 Z' fill='%23F3C2D2'/%3E%3Cpath d='M0 0 H34 C14 38 54 77 34 115 C14 153 54 192 34 230 H0 Z' fill='%23E89BB4'/%3E%3C/svg%3E")}
+.sidewave.r{right:0;transform:scaleX(-1);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='230' viewBox='0 0 90 230'%3E%3Cpath d='M0 0 H56 C28 38 84 77 56 115 C28 153 84 192 56 230 H0 Z' fill='%23F3C2D2'/%3E%3Cpath d='M0 0 H34 C14 38 54 77 34 115 C14 153 54 192 34 230 H0 Z' fill='%23E89BB4'/%3E%3C/svg%3E")}
+@media(max-width:1180px){ .sidewave{display:none} }
+
 /* services */
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(178,62,99,.06)}
@@ -158,6 +169,8 @@ footer a{color:#fff}
 </head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
+<div class="sidewave l" aria-hidden="true"></div>
+<div class="sidewave r" aria-hidden="true"></div>
 <div class="mocknote">★ TOPページ デザイン方向確認用モックアップ（本番・ローカルWPに影響なし／写真枠は仮）★</div>
 
 <!-- nav -->
