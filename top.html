@@ -130,6 +130,7 @@ h2 .sub{display:block;font-size:14px;font-weight:700;color:var(--rose);letter-sp
 .newslist .d{color:var(--greige);font-weight:700;font-size:14px;min-width:62px}
 .newslist .c{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap}
 .c-act{background:#fae3ea;color:var(--rose-deep)}
+.c-news{background:#fae3ea;color:var(--rose-deep)}
 .c-fin{background:#e6efe6;color:#5e7a5e}
 .c-diary{background:#eee7df;color:#8a6f55}
 .newslist a{text-decoration:none;color:var(--ink);font-weight:500;flex:1;min-width:200px}
@@ -296,12 +297,7 @@ footer a{color:#fff}
   <div class="wrap">
     <h2><span class="sub">NEWS</span>お知らせ・活動報告</h2>
     <p class="lead">散らばっていた更新情報を、カテゴリ別に集約。最新の動きはこちらから。</p>
-    <ul class="newslist">
-      <li><span class="d">2026.01</span><span class="c c-act">活動報告</span><a href="news-article.html?id=contest">「おおきな福祉のまちづくり」動画コンテストで最優秀賞を受賞しました</a></li>
-      <li><span class="d">2025.08</span><span class="c c-act">活動報告</span><a href="news-article.html?id=rally">アジア クロスカントリー ラリー2025に乳がん検査啓発バナーを掲載</a></li>
-      <li><span class="d">2025.05</span><span class="c c-fin">決算・運営報告</span><a href="news-article.html?id=fin2025">2025年 決算報告を公開しました</a></li>
-      <li><span class="d">2022.04</span><span class="c c-news">お知らせ</span><a href="news-article.html?id=open">4月、訪問介護事業所を開設しました</a></li>
-    </ul>
+    <ul class="newslist" id="topnews"></ul>
     <div class="center"><a class="btn btn-ghost" href="news.html">お知らせ・ブログ一覧へ →</a></div>
   </div>
 </section>
@@ -362,6 +358,14 @@ footer a{color:#fff}
     tg.addEventListener('click',function(){var o=nav.classList.toggle('open');tg.textContent=o?'✕':'☰';});
     nav.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');tg.textContent='☰';});});
   }
+})();
+</script>
+<script src="assets/posts.js"></script>
+<script>
+/* NEWS欄：posts.jsの最新4件を自動表示 */
+(function(){var el=document.getElementById('topnews');if(!el||!window.POSTS)return;
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+el.innerHTML=window.POSTS.slice(0,4).map(function(p){var c=window.CAT[p.cat];return '<li><span class="d">'+esc(p.date)+'</span><span class="c '+c[1]+'">'+esc(c[0])+'</span><a href="news-article.html?id='+p.id+'">'+esc(p.title)+'</a></li>';}).join('');
 })();
 </script>
 </body>
