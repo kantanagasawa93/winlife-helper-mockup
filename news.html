@@ -29,8 +29,16 @@ a{color:inherit}
 .tabs a.on,.tabs a:hover{background:var(--rose);color:#fff;border-color:var(--rose)}
 .list{padding:34px 0 50px}
 .newslist{list-style:none}
-.newslist li{display:flex;align-items:center;gap:14px;padding:18px 6px;border-bottom:1px solid #eedde2;flex-wrap:wrap}
-.newslist .d{color:var(--greige);font-weight:700;font-size:14px;min-width:64px}
+.newslist li{display:flex;align-items:center;gap:16px;padding:16px 6px;border-bottom:1px solid #eedde2}
+.thumb{position:relative;flex:0 0 auto;width:124px;height:76px;border-radius:10px;overflow:hidden;display:block;background:#f0e3e7}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb.video::before{content:"";position:absolute;inset:0;background:rgba(46,42,40,.26)}
+.thumb.video::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:0;height:0;border-left:17px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;filter:drop-shadow(0 1px 3px rgba(0,0,0,.5))}
+.thumb.doc{display:flex;align-items:center;justify-content:center;background:#f3ece4}
+.thumb.doc svg{width:30px;height:30px;color:#b08aa0}
+.ninfo{flex:1;min-width:0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+@media(max-width:600px){ .newslist li{gap:12px} .thumb{width:96px;height:62px} }
+.newslist .d{color:var(--greige);font-weight:700;font-size:14px;min-width:56px}
 .c{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap}
 .c-news{background:#fae3ea;color:var(--rose-deep)}
 .c-act{background:#fae3ea;color:var(--rose-deep)}
@@ -105,15 +113,42 @@ footer a{color:var(--rose-deep)}
 
 <section class="list"><div class="wrap">
   <ul class="newslist">
-    <li><span class="d">2026.01</span><span class="c c-act">活動報告</span><a class="t" href="news-article.html">「おおきな福祉のまちづくり」動画コンテストで最優秀賞を受賞しました</a></li>
-    <li><span class="d">2025.08</span><span class="c c-act">活動報告</span><a class="t" href="news-article.html">アジア クロスカントリー ラリー2025に乳がん検査啓発バナーを掲載</a></li>
-    <li><span class="d">2025.05</span><span class="c c-fin">決算・運営報告</span><a class="t" href="news-article.html">2025年 決算報告を公開しました</a></li>
-    <li><span class="d">2025.02</span><span class="c c-act">活動報告</span><a class="t" href="news-article.html">「木の絆プロジェクト」（テノ森）に協賛しています</a></li>
-    <li><span class="d">2024.05</span><span class="c c-fin">決算・運営報告</span><a class="t" href="news-article.html">2024年 決算報告（代表手記）</a></li>
-    <li><span class="d">2022.10</span><span class="c c-diary">立ち上げ日記</span><a class="t" href="news-article.html">妻を役員として申請する</a></li>
-    <li><span class="d">2022.07</span><span class="c c-diary">立ち上げ日記</span><a class="t" href="news-article.html">他事業所が助けてくれる</a></li>
-    <li><span class="d">2022.06</span><span class="c c-diary">立ち上げ日記</span><a class="t" href="news-article.html">訪問介護事業所、よい事・わるい事</a></li>
-    <li><span class="d">2022.04</span><span class="c c-news">お知らせ</span><a class="t" href="news-article.html">4月、訪問介護事業所を開設しました</a></li>
+    <li>
+      <a class="thumb video" href="news-article.html"><img src="https://img.youtube.com/vi/AkSvXMs2gos/hqdefault.jpg" alt="" loading="lazy"></a>
+      <div class="ninfo"><span class="d">2026.01</span><span class="c c-act">活動報告</span><a class="t" href="news-article.html">「おおきな福祉のまちづくり」動画コンテストで最優秀賞を受賞しました</a></div>
+    </li>
+    <li>
+      <a class="thumb" href="news-article.html"><img src="assets/img/ikemachi-rider.jpg" alt="" loading="lazy"></a>
+      <div class="ninfo"><span class="d">2025.08</span><span class="c c-act">活動報告</span><a class="t" href="news-article.html">アジア クロスカントリー ラリー2025に乳がん検査啓発バナーを掲載</a></div>
+    </li>
+    <li>
+      <span class="thumb doc"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 2h8l4 4v16H6V2zm7 1.5V7h3.5L13 3.5zM8 12h8v1.5H8V12zm0 3.5h8V17H8v-1.5z"/></svg></span>
+      <div class="ninfo"><span class="d">2025.05</span><span class="c c-fin">決算・運営報告</span><a class="t" href="news-article.html">2025年 決算報告を公開しました</a></div>
+    </li>
+    <li>
+      <a class="thumb" href="news-article.html"><img src="assets/img/tenomori-fund.png" alt="" loading="lazy"></a>
+      <div class="ninfo"><span class="d">2025.02</span><span class="c c-act">活動報告</span><a class="t" href="news-article.html">「木の絆プロジェクト」（テノ森）に協賛しています</a></div>
+    </li>
+    <li>
+      <span class="thumb doc"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 2h8l4 4v16H6V2zm7 1.5V7h3.5L13 3.5zM8 12h8v1.5H8V12zm0 3.5h8V17H8v-1.5z"/></svg></span>
+      <div class="ninfo"><span class="d">2024.05</span><span class="c c-fin">決算・運営報告</span><a class="t" href="news-article.html">2024年 決算報告（代表手記）</a></div>
+    </li>
+    <li>
+      <a class="thumb video" href="news-article.html"><img src="https://img.youtube.com/vi/HwkbfY4b018/hqdefault.jpg" alt="" loading="lazy"></a>
+      <div class="ninfo"><span class="d">2022.10</span><span class="c c-diary">立ち上げ日記</span><a class="t" href="news-article.html">妻を役員として申請する</a></div>
+    </li>
+    <li>
+      <a class="thumb video" href="news-article.html"><img src="https://img.youtube.com/vi/-YWLjqxZ5NI/hqdefault.jpg" alt="" loading="lazy"></a>
+      <div class="ninfo"><span class="d">2022.07</span><span class="c c-diary">立ち上げ日記</span><a class="t" href="news-article.html">他事業所が助けてくれる</a></div>
+    </li>
+    <li>
+      <a class="thumb video" href="news-article.html"><img src="https://img.youtube.com/vi/xe5YjfjBueE/hqdefault.jpg" alt="" loading="lazy"></a>
+      <div class="ninfo"><span class="d">2022.06</span><span class="c c-diary">立ち上げ日記</span><a class="t" href="news-article.html">訪問介護事業所、よい事・わるい事</a></div>
+    </li>
+    <li>
+      <a class="thumb" href="news-article.html"><img src="assets/img/empower.jpg" alt="" loading="lazy"></a>
+      <div class="ninfo"><span class="d">2022.04</span><span class="c c-news">お知らせ</span><a class="t" href="news-article.html">4月、訪問介護事業所を開設しました</a></div>
+    </li>
   </ul>
   <div class="pager"><a class="on" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">→</a></div>
 </div></section>
