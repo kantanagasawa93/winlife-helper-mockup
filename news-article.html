@@ -67,13 +67,19 @@ footer a{color:var(--rose-deep)}
 .ph.hasimg,.heroimg.hasimg{position:relative;padding:0;border:0;overflow:hidden}
 .ph img,.heroimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
-/* 動画埋め込み（現行サイトのYouTubeをそのまま掲載できる） */
-.ytembed{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;margin-bottom:12px;background:#000}
-.ytembed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+/* 動画：クリック再生サムネ（file://でもhttpsでも壊れない／実サムネ＋YouTubeリンク） */
+.ytlite{position:relative;display:block;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;margin-bottom:12px;background:#000;text-decoration:none}
+.ytlite img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92;transition:opacity .2s,transform .4s}
+.ytlite:hover img{opacity:1;transform:scale(1.02)}
+.ytlite .ytplay{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:74px;height:52px;background:#f00;border-radius:14px;opacity:.92;transition:opacity .2s}
+.ytlite:hover .ytplay{opacity:1}
+.ytlite .ytplay::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-left:22px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent}
+.ytlite .ytlabel{position:absolute;left:12px;bottom:10px;background:rgba(0,0,0,.62);color:#fff;font-size:12px;font-weight:700;padding:5px 11px;border-radius:7px}
 .cap{font-size:13px;color:var(--greige);margin:-2px 0 26px}
 figure.bodyfig{margin:0 0 24px}
 figure.bodyfig img{width:100%;border-radius:14px;display:block}
 figure.bodyfig figcaption{font-size:13px;color:var(--greige);margin-top:8px}
+.sign{margin-top:18px;color:var(--greige);font-weight:700;text-align:right}
 
 /* === 左右のピンク波（mie風：ぼかした柔らかい滲み。中央へ透明フェード） === */
 .sidewave{position:fixed;top:0;bottom:0;width:clamp(90px,15vw,260px);z-index:2;pointer-events:none;
@@ -119,17 +125,24 @@ figure.bodyfig figcaption{font-size:13px;color:var(--greige);margin-top:8px}
   <div class="crumb"><a href="top.html">ホーム</a> ＞ <a href="news.html">お知らせ・ブログ</a> ＞ 活動報告</div>
   <div class="meta"><span class="c">活動報告</span><span class="date">2026.01</span></div>
   <h1>「おおきな福祉のまちづくり」動画コンテストで最優秀賞を受賞しました</h1>
-  <div class="ytembed"><iframe src="https://www.youtube-nocookie.com/embed/AkSvXMs2gos" title="ウインライフ 啓発動画" loading="lazy" allow="accelerated-sensors; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-  <p class="cap">※ デモ表示：現行サイトに掲載中の動画を試験的に埋め込んでいます。本番では受賞作品の動画に差し替えます。</p>
+  <a class="ytlite" href="https://www.youtube.com/watch?v=AkSvXMs2gos" target="_blank" rel="noopener" aria-label="動画を見る：いっしょに生きる｜Living Together（YouTube）">
+    <img src="https://img.youtube.com/vi/AkSvXMs2gos/hqdefault.jpg" alt="動画コンテスト最優秀賞作品「いっしょに生きる｜Living Together」のサムネイル" loading="lazy">
+    <span class="ytplay" aria-hidden="true"></span>
+    <span class="ytlabel">▶ いっしょに生きる｜Living Together（YouTubeで再生）</span>
+  </a>
+  <p class="cap">※ 現行サイトに掲載中の動画です。サムネイルをクリックするとYouTubeで再生します（本番では受賞作品の正式動画に差し替え）。</p>
 
-  <p>2025年10月に福岡市後援で開催された動画コンテストにおいて、弊社が制作に関わった作品が最優秀賞を受賞しました。</p>
-  <p>代表が日頃から協働しているネパール人クリエイターのアニル氏とともに、弊社が撮影現場の調整や構成を担当。表彰式には、撮影現場として受け入れてくださった利用者様も同席し、共に喜びを分かち合いました。</p>
+  <p>2025年10月、福岡市後援で開催された動画コンテストにおいて、弊社が制作に関わった作品が最優秀賞を受賞しました。代表が日頃から協働しているネパール人クリエイターのアニル氏とともに、弊社が撮影現場の調整や構成を手がけたものです。表彰式には、撮影現場として受け入れてくださった弊社の利用者様も同席し、共に喜びを分かち合いました。</p>
+  <p>受賞作は、学校法人愛和学園 グローバルクリエイター専門学校「チーム：アニル」による『いっしょに生きる｜Living Together』。介護の現場から、誰もが「いっしょに生きる」社会への想いを込めた作品です。</p>
 
-  <h2>「いっしょに生きる｜Living Together」</h2>
-  <p>学校法人愛和学園 グローバルクリエイター専門学校 チーム アニルによる作品です。介護の現場から、誰もが「いっしょに生きる」社会への想いを込めました。</p>
-  <figure class="bodyfig"><img src="assets/img/ikemachi-rider.jpg" alt="アジア クロスカントリー ラリーに掲載した乳がん検査啓発ビジュアル" loading="lazy"><figcaption>乳がん検査の啓発活動。代表が支援するラリードライバーの車両にバナーを掲出しました（現行サイト掲載画像）。</figcaption></figure>
+  <h2>乳がん検査啓発バナー ―― アジア クロスカントリー ラリー2025</h2>
+  <figure class="bodyfig"><img src="assets/img/rally-banner.jpg" alt="ラリー車両に掲出された乳がん検査啓発バナー（ピンクのEmpower yourselfバナー）" loading="lazy"><figcaption>池町選手「チーム ムサシ インターナショナル」の車両に掲出された乳がん検査啓発バナー（中央のピンクのバナー）。現行サイト掲載画像。</figcaption></figure>
+  <p>2025年8月にタイ王国で開催された「アジア クロスカントリー ラリー2025」。参戦する池町選手の「チーム ムサシ インターナショナル」のジャージ・車両に、乳がん検査啓発のバナーを掲載していただきました。少しでも多くの方に、乳がん検査を受けていただければ幸いです。</p>
 
-  <p>ウインライフは、訪問介護という本業を続けながら、地域や社会への貢献にも取り組んでいます。これからも、ささやかでも意味のある活動を続けてまいります。</p>
+  <h2>妻・さとこへ ―― この企画に込めた想い</h2>
+  <p>妻・さとこが2023年1月に旅立って、間もなく一年。マレーシアやネパールで長く健やかに暮らした妻は、症状の出にくい乳がん検診から遠い環境にありました。「海外で暮らす女性にこそ、乳がん検診を受けてほしい」――その願いから、日本・マレーシア・ネパール・カナダ・スペイン・タイ・アメリカと、世界中の妻の友人たちがバナーをデザインし、この企画は今も続いています。</p>
+  <p>乳がんに苦しむ人が一人でも減りますように。ご協力くださったすべての皆さまに、心より感謝申し上げます。</p>
+  <p class="sign">訪問介護事業所 ウインライフ 代表　西濱 昌典<br>― 最愛の妻 さとこ へ ―</p>
 
   <div class="share">
     <a href="#">X でシェア</a>
