@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>私たちについて｜ウインライフ ヘルパーステーション（モックアップ）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#D6587E;--rose-deep:#B23E63;--greige:#7A6E66;--base:#FBF7F4;--tint:#F6ECEF;--neutral:#F4F1EE;--ink:#2E2A28;--tel:#E8843C;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--base);line-height:1.95;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.narrow{max-width:820px}
+a{color:inherit}
+.lphead{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #f0e3e7}
+.lphead .row{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;height:58px}
+.lphead .logo{font-weight:900;color:var(--rose-deep);font-size:15px;text-decoration:none;white-space:nowrap}
+.lphead .right{display:flex;align-items:center;gap:14px}
+.lphead .back{font-size:13px;color:var(--greige);text-decoration:none;font-weight:600}
+.lphead .htel{background:var(--rose);color:#fff;padding:8px 14px;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+@media(max-width:600px){ .lphead .logo{font-size:13px} .lphead .back{display:none} .lphead .htel{font-size:13px;padding:7px 11px} }
+.ptitle{background:#fff;border-bottom:1px solid #f0e3e7;padding:40px 0 34px}
+.crumb{font-size:13px;color:var(--greige);margin-bottom:10px}
+.ptitle h1{font-size:30px;font-weight:900}
+.ptitle h1 .en{display:block;font-size:13px;font-weight:700;color:var(--rose);letter-spacing:.15em;margin-bottom:4px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tabs a{font-size:13px;font-weight:700;text-decoration:none;background:var(--tint);color:var(--rose-deep);padding:7px 14px;border-radius:999px}
+.tabs a:hover{background:var(--rose);color:#fff}
+.sec{padding:48px 0}
+.sec h2{font-size:23px;font-weight:900;padding-left:14px;border-left:6px solid var(--rose);margin-bottom:20px}
+.greeting{display:grid;grid-template-columns:1fr 320px;gap:36px;align-items:start}
+@media(max-width:820px){ .greeting{grid-template-columns:1fr} }
+.greeting p{margin-bottom:16px}
+.greeting .sign{text-align:right;color:var(--greige);font-weight:700;margin-top:10px}
+.ph{background:repeating-linear-gradient(45deg,#efe3e6,#efe3e6 12px,#f6ecef 12px,#f6ecef 24px);border:1px dashed #d8b9c3;border-radius:16px;min-height:280px;display:flex;align-items:center;justify-content:center;color:#b08;font-weight:700;font-size:13px;text-align:center;padding:16px}
+.story{background:var(--neutral)}
+.story blockquote{font-size:18px;border-left:4px solid var(--rose);padding-left:18px;max-width:820px}
+.company{width:100%;border-collapse:collapse;background:#fff;border:1px solid #eedde2;border-radius:14px;overflow:hidden}
+.company th,.company td{text-align:left;padding:14px 18px;border-bottom:1px solid #f3e7eb;font-size:15px;vertical-align:top}
+.company th{background:var(--tint);color:var(--rose-deep);white-space:nowrap;width:190px}
+.company tr:last-child th,.company tr:last-child td{border-bottom:0}
+@media(max-width:600px){ .company,.company tbody,.company tr,.company th,.company td{display:block;width:auto} .company th{border-bottom:0} }
+.cta{background:var(--rose);color:#fff;border-radius:18px;padding:30px;text-align:center;margin:30px 0 44px}
+.cta h2{color:#fff;border:0;padding:0;font-size:21px;margin-bottom:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--rose-deep);text-decoration:none;font-weight:700;padding:13px 22px;border-radius:12px;margin:6px}
+.mocknote{background:#332;color:#ffd;text-align:center;padding:8px;font-size:13px;font-weight:700}
+.mocknote a{color:#ffd}
+footer{background:#fff;border-top:1px solid #f0e3e7;color:var(--greige);padding:30px 0;font-size:13px;text-align:center}
+footer a{color:var(--rose-deep)}
+
+/* === 共通グローバルナビ（ハンバーガー固定・社名中央） === */
+.nav{position:sticky;top:0;z-index:50;background:#fbf7f4;border-bottom:1px solid #eedde2}
+.navbar .row{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px;gap:10px}
+.navtoggle{justify-self:end;background:none;border:0;font-size:28px;color:var(--rose-deep);cursor:pointer;line-height:1;position:relative;z-index:60}
+.logo{justify-self:center;text-align:center;font-weight:900;color:var(--rose-deep);font-size:clamp(15px,2.3vw,21px);white-space:nowrap;text-decoration:none;letter-spacing:.02em}
+.navtop-right{justify-self:end;display:flex;align-items:center;gap:10px}
+.htel{display:inline-flex;align-items:center;gap:7px;background:var(--rose);color:#fff;padding:9px 16px;border-radius:999px;font-weight:700;text-decoration:none;font-size:15px;white-space:nowrap}
+.ico-tel{width:16px;height:16px}
+.menu li.telitem a .ico-tel{vertical-align:-3px;margin-right:4px}
+.nav.open::after{content:"";position:fixed;inset:0;background:rgba(46,42,40,.4);z-index:48}
+.menu{position:fixed;top:0;right:0;left:auto;bottom:0;width:min(420px,84vw);z-index:50;list-style:none;display:flex;flex-direction:column;align-items:stretch;background:#fff;padding:74px 22px 28px;overflow-y:auto;transform:translateX(100%);transition:transform .3s ease;box-shadow:-12px 0 40px rgba(0,0,0,.14)}
+.nav.open .menu{transform:none}
+.menu>li{position:relative}
+.menu>li>a{display:block;text-decoration:none;color:var(--ink);font-weight:700;padding:14px 6px;border-bottom:1px solid #f3e7eb;font-size:17px}
+.menu>li>a.hot{color:var(--rose-deep)}
+.has-sub>a:after{content:"\25BE";float:right;color:var(--rose)}
+.submenu{list-style:none;padding:2px 0 10px 16px}
+.submenu li a{display:block;text-decoration:none;color:var(--greige);padding:9px 6px;font-size:14px}
+.submenu li a:hover{color:var(--rose-deep)}
+.menu li.telitem a{display:inline-block;margin-top:16px;background:var(--rose);color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;border-bottom:0;text-align:center}
+@media(max-width:600px){ .htel{display:none} }
+
+/* 写真差し込み */
+.ph.hasimg,.heroimg.hasimg{position:relative;padding:0;border:0;overflow:hidden}
+.ph img,.heroimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+</style>
+</head>
+<body>
+<div class="mocknote">★ 私たちについて モックアップ　|　<a href="top.html">TOP</a>・<a href="news.html">活動報告</a></div>
+<div class="nav" id="nav">
+  <div class="navbar"><div class="row">
+    <span class="navspacer"></span>
+    <a class="logo" href="top.html">ウインライフ ヘルパーステーション</a>
+    <div class="navtop-right">
+      <a class="htel" href="tel:0924109285"><svg class="ico-tel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg><span>092-410-9285</span></a>
+      <button class="navtoggle" id="navtoggle" aria-label="メニュー">☰</button>
+    </div>
+  </div></div>
+  <ul class="menu">
+    <li class="has-sub"><a href="about.html">私たちについて</a><ul class="submenu"><li><a href="about.html#greeting">ごあいさつ</a></li><li><a href="about.html#company">会社概要</a></li><li><a href="about.html#story">設立ストーリー</a></li><li><a href="news.html">社会貢献活動</a></li></ul></li>
+    <li class="has-sub"><a href="service-homon.html">サービス</a><ul class="submenu"><li><a href="service-homon.html">訪問介護（介護保険）</a></li><li><a href="service-kyotaku.html">居宅介護・重度訪問介護</a></li><li><a href="service-jihi.html">自費サービス</a></li><li><a href="top.html#flow">ご利用の流れ</a></li><li><a href="info-disclosure.html#juyo">重要事項説明書</a></li></ul></li>
+    <li class="has-sub"><a class="hot" href="recruit-lp.html">採用情報</a><ul class="submenu"><li><a href="recruit-lp.html">募集要項</a></li><li><a href="recruit-lp.html#benefits">福利厚生・補助制度</a></li><li><a href="recruit-lp.html">研修・資格支援</a></li><li><a href="recruit-lp.html">働く環境の透明性</a></li></ul></li>
+    <li class="has-sub"><a href="news.html">お知らせ</a><ul class="submenu"><li><a href="news.html">お知らせ</a></li><li><a href="news.html">活動報告</a></li><li><a href="news.html">決算・運営報告</a></li><li><a href="news.html">立ち上げ日記（2022）</a></li></ul></li>
+    <li class="has-sub"><a href="info-disclosure.html">情報公開</a><ul class="submenu"><li><a href="info-disclosure.html#unei">運営規程</a></li><li><a href="info-disclosure.html#juyo">重要事項説明書</a></li><li><a href="info-disclosure.html#shishin">各種指針・規程</a></li><li><a href="info-disclosure.html#kessan">決算報告（2022〜2025）</a></li></ul></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+    <li class="telitem"><a class="navtel" href="tel:0924109285"><svg class="ico-tel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg> 092-410-9285</a></li>
+  </ul>
+</div>
+
+<section class="ptitle"><div class="wrap">
+  <div class="crumb"><a href="top.html">ホーム</a> ＞ 私たちについて</div>
+  <h1><span class="en">ABOUT US</span>私たちについて</h1>
+  <div class="tabs">
+    <a href="#greeting">ごあいさつ</a>
+    <a href="#story">設立ストーリー</a>
+    <a href="#company">会社概要</a>
+    <a href="news.html">社会貢献活動</a>
+  </div>
+</div></section>
+
+<!-- 設立ストーリー -->
+<section id="story" class="story sec"><div class="wrap">
+  <h2>設立ストーリー</h2>
+  <blockquote>
+    ウインライフは2022年4月、福岡市東区下原で生まれました。きっかけは、がんと闘った代表の妻の存在です。<br><br>
+    「家族との大切な時間を確保したい」——その切実な想いから会社を立ち上げました。妻を見送ったいま、私たちは同じ苦しみを少しでも減らせるよう、病気や家庭の事情を抱える方々が働き続けられる職場づくりに取り組んでいます。
+  </blockquote>
+</div></section>
+
+<!-- ごあいさつ（全文） -->
+<section id="greeting" class="sec"><div class="wrap">
+  <h2>ごあいさつ</h2>
+  <div class="greeting">
+    <div>
+      <p>2022年4月に福岡市東区下原にて開設いたしました、ウインライフ ヘルパーステーションです。</p>
+      <p>ウインライフ ヘルパーステーションは、乳がん患者であった私の妻と家族を守るべく設立いたしました。妻がステージⅣの癌患者であったため、闘病の後期には妻と家族のための私の時間が必要になります。被雇用者の立場では時間を割くことが難しいことから、会社設立に至りました。</p>
+      <p>妻が他界した今、ウインライフ ヘルパーステーションは、そのような苦しみの削減に少しでも貢献できるよう、「病気」や「難しい家庭事情」を持つヘルパーさんを積極的に採用する考えです。</p>
+      <p>ウインライフ ヘルパーステーションでは「働きやすい環境」をつくることを第一義としています。ヘルパーさんの諸事情を鑑みて、柔軟に「シフトの組み直し」に応じたり、気軽に「お休みを申し出」られる環境整備に努めています。小さな会社ではありますが、ヘルパーさんには「乳がん検査」を奨励し、積極的に費用を補助してまいります。</p>
+      <p>そして、ウインライフ ヘルパーステーションの存続が、地域福祉や介護の世界に貢献することにつながると信じています。若い介護の担い手を育成すべく、大学生の非常勤ヘルパー雇用にも尽力できるよう、九州産業大学のキャンパス近くに事業所を設置いたしました。</p>
+      <p>離職率の高い業界と言われる介護の世界ですが、「働きやすい職場環境」を目指すことが、がんサバイバーや母子・父子家庭、障がいをもつお子様の親御さんなど、さまざまな事情を抱えた方々の雇用につながると考えます。それが、強い事業所・強い地域をつくることと信じております。</p>
+      <p>今後とも、何卒よろしくお願いいたします。</p>
+      <div class="sign">ウインライフ合同会社　代表社員　西濱 昌典</div>
+    </div>
+    <div class="ph hasimg"><img src="assets/img/p16810647.jpg" alt="ウインライフ"></div>
+  </div>
+</div></section>
+
+<!-- 会社概要 -->
+<section id="company" class="sec" style="background:var(--neutral)"><div class="wrap">
+  <h2>会社概要</h2>
+  <table class="company"><tbody>
+    <tr><th>法人名称</th><td>ウインライフ合同会社</td></tr>
+    <tr><th>事業所名</th><td>ウインライフ ヘルパーステーション</td></tr>
+    <tr><th>所在地</th><td>〒813-0002 福岡市東区下原4-5-8-102</td></tr>
+    <tr><th>TEL / FAX</th><td>092-410-9285 / 092-710-8784</td></tr>
+    <tr><th>代表社員 / 管理者</th><td>西濱 昌典</td></tr>
+    <tr><th>設立</th><td>令和4年（2022年）4月</td></tr>
+    <tr><th>事業内容</th><td>訪問介護（介護保険）／居宅介護・重度訪問介護／自費サービス</td></tr>
+    <tr><th>事業所番号</th><td>4070805801（訪問介護・介護予防型）／40A0800847（生活支援型）／4010202127（居宅介護・重度訪問介護）</td></tr>
+    <tr><th>法人番号</th><td>2290003012103</td></tr>
+    <tr><th>最寄り</th><td>JR鹿児島本線 九産大前駅 徒歩8分</td></tr>
+    <tr><th>メール</th><td>winlife.helperstation@gmail.com</td></tr>
+  </tbody></table>
+</div></section>
+
+<div class="wrap"><div class="cta">
+  <h2>ご相談・ご応募はお気軽に</h2>
+  <a class="btn" href="contact.html">介護のご相談</a>
+  <a class="btn" href="recruit-lp.html">採用情報を見る</a>
+</div></div>
+
+<footer>ウインライフ ヘルパーステーション／TEL <a href="tel:0924109285">092-410-9285</a>　<a href="top.html">← サイトトップへ</a></footer>
+<script>
+(function(){var nav=document.getElementById('nav'),tg=document.getElementById('navtoggle');if(!nav||!tg)return;
+tg.addEventListener('click',function(){var o=nav.classList.toggle('open');tg.textContent=o?'\u2715':'\u2630';});
+nav.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');tg.textContent='\u2630';});});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー｜ウインライフ ヘルパーステーション（モックアップ）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#D6587E;--rose-deep:#B23E63;--greige:#7A6E66;--base:#FBF7F4;--tint:#F6ECEF;--neutral:#F4F1EE;--ink:#2E2A28;--tel:#E8843C;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--base);line-height:1.95;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.narrow{max-width:860px;margin:0 auto}
+a{color:inherit}
+/* === 共通グローバルナビ === */
+.nav{position:sticky;top:0;z-index:50;background:#fbf7f4;border-bottom:1px solid #eedde2}
+.navbar .row{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px;gap:10px}
+.navtoggle{justify-self:end;background:none;border:0;font-size:28px;color:var(--rose-deep);cursor:pointer;line-height:1;position:relative;z-index:60}
+.logo{justify-self:center;text-align:center;font-weight:900;color:var(--rose-deep);font-size:clamp(15px,2.3vw,21px);white-space:nowrap;text-decoration:none;letter-spacing:.02em}
+.navtop-right{justify-self:end;display:flex;align-items:center;gap:10px}
+.htel{display:inline-flex;align-items:center;gap:7px;background:var(--rose);color:#fff;padding:9px 16px;border-radius:999px;font-weight:700;text-decoration:none;font-size:15px;white-space:nowrap}
+.ico-tel{width:16px;height:16px}
+.menu li.telitem a .ico-tel{vertical-align:-3px;margin-right:4px}
+.nav.open::after{content:"";position:fixed;inset:0;background:rgba(46,42,40,.4);z-index:48}
+.menu{position:fixed;top:0;right:0;left:auto;bottom:0;width:min(420px,84vw);z-index:50;list-style:none;display:flex;flex-direction:column;align-items:stretch;background:#fff;padding:74px 22px 28px;overflow-y:auto;transform:translateX(100%);transition:transform .3s ease;box-shadow:-12px 0 40px rgba(0,0,0,.14)}
+.nav.open .menu{transform:none}
+.menu>li{position:relative}
+.menu>li>a{display:block;text-decoration:none;color:var(--ink);font-weight:700;padding:14px 6px;border-bottom:1px solid #f3e7eb;font-size:17px}
+.menu>li>a.hot{color:var(--rose-deep)}
+.has-sub>a:after{content:"\25BE";float:right;color:var(--rose)}
+.submenu{list-style:none;padding:2px 0 10px 16px}
+.submenu li a{display:block;text-decoration:none;color:var(--greige);padding:9px 6px;font-size:14px}
+.submenu li a:hover{color:var(--rose-deep)}
+.menu li.telitem a{display:inline-block;margin-top:16px;background:var(--rose);color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;border-bottom:0;text-align:center}
+@media(max-width:600px){ .htel{display:none} }
+/* page */
+.ptitle{background:#fff;border-bottom:1px solid #f0e3e7;padding:40px 0 34px}
+.crumb{font-size:13px;color:var(--greige);margin-bottom:10px}
+.ptitle h1{font-size:30px;font-weight:900}
+.ptitle h1 .en{display:block;font-size:13px;font-weight:700;color:var(--rose);letter-spacing:.15em;margin-bottom:4px}
+.body{padding:44px 0 10px}
+.body p{margin-bottom:18px}
+.body h2{font-size:19px;font-weight:900;padding-left:12px;border-left:5px solid var(--rose);margin:30px 0 12px}
+.body ul{margin:0 0 18px 1.4em}
+.body li{margin-bottom:6px}
+.note{background:var(--neutral);border-radius:12px;padding:16px 20px;font-size:14px;color:#555;margin:8px 0 24px}
+.rev{color:var(--greige);font-size:13px;margin:24px 0 44px}
+footer{background:#fff;border-top:1px solid #f0e3e7;color:var(--greige);padding:30px 0;font-size:13px;text-align:center}
+footer a{color:var(--rose-deep)}
+.mocknote{background:#332;color:#ffd;text-align:center;padding:8px;font-size:13px;font-weight:700}
+.mocknote a{color:#ffd}
+</style>
+</head>
+<body>
+<div class="mocknote">★ プライバシーポリシー モックアップ（文面は雛形・要法務確認）　|　<a href="top.html">TOP</a></div>
+<div class="nav" id="nav">
+  <div class="navbar"><div class="row">
+    <span class="navspacer"></span>
+    <a class="logo" href="top.html">ウインライフ ヘルパーステーション</a>
+    <div class="navtop-right">
+      <a class="htel" href="tel:0924109285"><svg class="ico-tel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg><span>092-410-9285</span></a>
+      <button class="navtoggle" id="navtoggle" aria-label="メニュー">☰</button>
+    </div>
+  </div></div>
+  <ul class="menu">
+    <li class="has-sub"><a href="about.html">私たちについて</a><ul class="submenu"><li><a href="about.html#greeting">ごあいさつ</a></li><li><a href="about.html#company">会社概要</a></li><li><a href="about.html#story">設立ストーリー</a></li><li><a href="news.html">社会貢献活動</a></li></ul></li>
+    <li class="has-sub"><a href="service-homon.html">サービス</a><ul class="submenu"><li><a href="service-homon.html">訪問介護（介護保険）</a></li><li><a href="service-kyotaku.html">居宅介護・重度訪問介護</a></li><li><a href="service-jihi.html">自費サービス</a></li><li><a href="top.html#flow">ご利用の流れ</a></li><li><a href="info-disclosure.html#juyo">重要事項説明書</a></li></ul></li>
+    <li class="has-sub"><a class="hot" href="recruit-lp.html">採用情報</a><ul class="submenu"><li><a href="recruit-lp.html">募集要項</a></li><li><a href="recruit-lp.html#benefits">福利厚生・補助制度</a></li><li><a href="recruit-lp.html">研修・資格支援</a></li><li><a href="recruit-lp.html">働く環境の透明性</a></li></ul></li>
+    <li class="has-sub"><a href="news.html">お知らせ</a><ul class="submenu"><li><a href="news.html">お知らせ</a></li><li><a href="news.html">活動報告</a></li><li><a href="news.html">決算・運営報告</a></li><li><a href="news.html">立ち上げ日記（2022）</a></li></ul></li>
+    <li class="has-sub"><a href="info-disclosure.html">情報公開</a><ul class="submenu"><li><a href="info-disclosure.html#unei">運営規程</a></li><li><a href="info-disclosure.html#juyo">重要事項説明書</a></li><li><a href="info-disclosure.html#shishin">各種指針・規程</a></li><li><a href="info-disclosure.html#kessan">決算報告（2022〜2025）</a></li></ul></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+    <li class="telitem"><a class="navtel" href="tel:0924109285"><svg class="ico-tel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg> 092-410-9285</a></li>
+  </ul>
+</div>
+
+<section class="ptitle"><div class="wrap">
+  <div class="crumb"><a href="top.html">ホーム</a> ＞ プライバシーポリシー</div>
+  <h1><span class="en">PRIVACY POLICY</span>プライバシーポリシー</h1>
+</div></section>
+
+<div class="wrap"><div class="narrow body">
+  <p>ウインライフ合同会社（ウインライフ ヘルパーステーション。以下「当事業所」）は、お客様の個人情報を適切に取り扱うことを社会的責務と考え、以下の方針に基づき個人情報の保護に努めます。</p>
+
+  <div class="note">※ これは雛形（モックアップ）です。実際の運用前に、提供サービス・取得項目・委託先の実態に合わせて内容を確定し、必要に応じて専門家の確認を受けてください。</div>
+
+  <h2>1. 取得する個人情報</h2>
+  <p>当事業所は、お問い合わせ・採用応募・サービスのご利用に際し、次の情報を取得することがあります。</p>
+  <ul>
+    <li>お名前、電話番号、メールアドレス等の連絡先</li>
+    <li>お問い合わせ・ご相談・ご応募の内容</li>
+    <li>サービス提供に必要な範囲の心身の状況等（ご利用者の場合）</li>
+    <li>ウェブサイトの利用状況（アクセス解析による統計情報）</li>
+  </ul>
+
+  <h2>2. 利用目的</h2>
+  <ul>
+    <li>お問い合わせ・ご相談への対応、ご連絡のため</li>
+    <li>採用選考・採用に関するご連絡のため</li>
+    <li>介護サービスの提供・契約の履行・関連するご案内のため</li>
+    <li>サービス向上のための分析・改善のため</li>
+  </ul>
+
+  <h2>3. 第三者提供</h2>
+  <p>当事業所は、法令に基づく場合や、サービス提供に必要で関係機関（市区町村・医療機関・ケアマネジャー等）と連携する場合を除き、ご本人の同意なく個人情報を第三者に提供しません。</p>
+
+  <h2>4. 安全管理</h2>
+  <p>取得した個人情報の漏えい・滅失・毀損の防止その他の安全管理のために、必要かつ適切な措置を講じます。</p>
+
+  <h2>5. 業務委託</h2>
+  <p>利用目的の達成に必要な範囲で個人情報の取扱いを委託する場合は、適切な委託先を選定し、必要な監督を行います。</p>
+
+  <h2>6. アクセス解析・Cookie</h2>
+  <p>当サイトでは、利用状況の把握・改善のためにアクセス解析ツール（Google アナリティクス等）を利用する場合があります。これにより収集される情報は匿名で、個人を特定するものではありません。ブラウザの設定によりCookieを無効化できます。</p>
+
+  <h2>7. 開示・訂正・削除のご請求</h2>
+  <p>ご本人からの個人情報の開示・訂正・利用停止・削除等のご請求には、ご本人であることを確認のうえ、法令に従い適切に対応します。</p>
+
+  <h2>8. お問い合わせ窓口</h2>
+  <p>本ポリシーに関するお問い合わせは、下記までご連絡ください。</p>
+  <ul>
+    <li>ウインライフ合同会社 ウインライフ ヘルパーステーション</li>
+    <li>〒813-0002 福岡市東区下原4-5-8-102</li>
+    <li>TEL：092-410-9285／メール：winlife.helperstation@gmail.com</li>
+  </ul>
+
+  <h2>9. 改定</h2>
+  <p>本ポリシーの内容は、法令の変更や運用の見直しに応じて改定することがあります。最新の内容は本ページに掲載します。</p>
+
+  <div class="rev">制定日：　　年　　月　　日　／　最終改定日：　　年　　月　　日</div>
+</div></div>
+
+<footer>
+  ウインライフ ヘルパーステーション（ウインライフ合同会社）／TEL <a href="tel:0924109285">092-410-9285</a>　<a href="top.html">← サイトトップへ</a>
+</footer>
+
+<script>(function(){var nav=document.getElementById('nav'),tg=document.getElementById('navtoggle');if(!nav||!tg)return;tg.addEventListener('click',function(){var o=nav.classList.toggle('open');tg.textContent=o?'✕':'☰';});nav.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');tg.textContent='☰';});});})();</script>
+</body>
+</html>

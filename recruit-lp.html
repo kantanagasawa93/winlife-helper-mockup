@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>採用情報｜ウインライフ ヘルパーステーション（モックアップ）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rose:#D6587E; --rose-deep:#B23E63; --greige:#7A6E66;
+  --base:#FBF7F4; --tint:#F6ECEF; --neutral:#F4F1EE; --ink:#2E2A28; --sage:#8DA38B; --tel:#E8843C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--base);line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+section{padding:72px 0}
+h2{font-size:32px;font-weight:900;line-height:1.4;margin-bottom:8px;padding-left:16px;border-left:6px solid var(--rose)}
+h2 .sub{display:block;font-size:15px;font-weight:700;color:var(--rose);letter-spacing:.1em;margin-bottom:6px}
+.lead{color:var(--greige);margin-bottom:32px}
+.ribbon{display:inline-block;width:22px;height:22px;vertical-align:-4px;margin-right:6px}
+/* mock photo placeholder */
+.ph{background:repeating-linear-gradient(45deg,#efe3e6,#efe3e6 12px,#f6ecef 12px,#f6ecef 24px);
+  border:1px dashed #d8b9c3;border-radius:16px;display:flex;align-items:center;justify-content:center;
+  color:#b08;font-size:13px;font-weight:700;text-align:center;min-height:200px;padding:16px}
+.ph.round{border-radius:50%;width:96px;height:96px;min-height:0;flex:0 0 96px}
+
+/* HERO（明るい・大きな画像バナー＋中央寄せの縦積み。TOPの横分割と構図で差別化） */
+.hero{text-align:center;padding:0 0 52px;background:#fff;border-bottom:1px solid #f0e3e7}
+.hero .heroban{min-height:260px;border-radius:0;border-left:none;border-right:none;border-top:none}
+.hero .inner{padding:36px 20px 0;max-width:760px;margin:0 auto}
+.hero .tag{display:inline-block;background:var(--tint);color:var(--rose-deep);padding:6px 16px;border-radius:999px;font-size:13px;font-weight:700;margin-bottom:18px}
+.hero h1{font-size:38px;font-weight:900;line-height:1.45;margin-bottom:14px;color:var(--ink)}
+.hero h1 em{color:var(--rose-deep);font-style:normal}
+.hero p{font-size:17px;margin-bottom:28px;color:var(--greige)}
+.badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.badge{background:#fff;color:var(--ink);border:2px solid var(--rose);border-radius:14px;padding:12px 18px;min-width:150px}
+.badge .k{font-size:13px;color:var(--greige);font-weight:700}
+.badge .v{font-size:22px;font-weight:900;color:var(--rose-deep);line-height:1.3}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:16px 26px;font-size:17px;font-weight:700;text-decoration:none;border:none;cursor:pointer;min-height:56px}
+.btn-rose{background:var(--rose);color:#fff}
+.btn-tel{background:var(--tel);color:#fff}
+.btn-line{background:#06C755;color:#fff}
+.btn-ghost{background:transparent;color:var(--rose-deep);border:2px solid var(--rose)}
+
+/* 想い */
+.story{display:grid;grid-template-columns:300px 1fr;gap:32px;align-items:center}
+.story blockquote{border-left:4px solid var(--rose);padding-left:18px;color:var(--ink);font-size:18px}
+.story .by{color:var(--greige);font-size:14px;margin-top:14px}
+
+/* 給与 */
+.salary{background:var(--neutral)}
+.bignum{text-align:center;margin:8px 0 28px}
+.bignum .n{font-size:64px;font-weight:900;color:var(--rose-deep);line-height:1.1}
+.bignum .n small{font-size:28px}
+.bignum .note{color:var(--greige);font-size:14px}
+.tbl{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tcard{background:#fff;border-radius:14px;padding:18px 20px}
+.tcard .k{font-size:13px;color:var(--rose);font-weight:700}
+.tcard .v{font-size:17px;font-weight:700}
+
+/* timeline */
+.steps{list-style:none;position:relative;padding-left:28px}
+.steps:before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:#e3c6cf}
+.steps li{position:relative;margin-bottom:18px}
+.steps li:before{content:"";position:absolute;left:-26px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--rose)}
+.steps b{color:var(--rose-deep)}
+
+/* voices */
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.voice{background:#fff;border-radius:16px;padding:22px;text-align:center}
+.voice .ph.round{margin:0 auto 14px}
+.voice .who{font-weight:700;font-size:14px;margin-bottom:8px}
+.voice .msg{font-size:15px;color:#444;text-align:left}
+
+/* benefits */
+.benefits{background:var(--neutral)}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bitem{background:#fff;border-radius:14px;padding:18px}
+.bitem .ic{font-size:24px}
+.bitem .t{font-weight:700;margin:6px 0 4px}
+.bitem .d{font-size:14px;color:var(--greige)}
+.bitem.hero-benefit{grid-column:span 3;border:2px solid var(--rose);background:#fff}
+.bitem.hero-benefit .t{color:var(--rose-deep);font-size:20px}
+
+/* faq */
+details{background:#fff;border-radius:12px;margin-bottom:10px;padding:0 20px;border:1px solid #eedde2}
+summary{cursor:pointer;font-weight:700;padding:16px 0;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"＋";position:absolute;right:0;color:var(--rose)}
+details[open] summary:after{content:"−"}
+details p{padding:0 0 16px;color:#444}
+
+/* form */
+.applybox{background:var(--tint);color:var(--ink);border:2px solid #eccdd6;border-radius:20px;padding:36px;text-align:center}
+.applybox h2{color:var(--rose-deep);border-left:none;padding-left:0;text-align:center}
+.form{max-width:440px;margin:20px auto;text-align:left}
+.form label{display:block;font-size:14px;font-weight:700;margin:14px 0 4px}
+.form input,.form select{width:100%;padding:14px;border-radius:10px;border:none;font-size:16px;font-family:inherit}
+.radio{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px}
+.radio span{background:#fff;border:1px solid #e3c6cf;padding:8px 14px;border-radius:999px;font-size:14px}
+
+/* sticky bar */
+.sticky{position:fixed;left:0;right:0;bottom:0;display:flex;z-index:50;box-shadow:0 -2px 12px rgba(0,0,0,.12)}
+.sticky a{flex:1;text-align:center;padding:16px;font-weight:700;text-decoration:none;color:#fff;font-size:16px}
+.sticky .tel{background:var(--tel)}
+.sticky .apply{background:var(--rose-deep)}
+
+footer{background:#3a3330;color:#cdbfc4;padding:48px 0;font-size:14px}
+footer a{color:#fff}
+
+.mocknote{background:#332;color:#ffd;text-align:center;padding:8px;font-size:13px;font-weight:700;letter-spacing:.05em}
+.mocknote a{color:#ffd;margin:0 8px}
+/* 応募3ステップ */
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+.step3{background:#fff;border-radius:14px;padding:22px 18px;text-align:center;position:relative}
+.step3 .no{display:inline-flex;width:40px;height:40px;border-radius:50%;background:var(--rose);color:#fff;font-weight:900;align-items:center;justify-content:center;font-size:18px;margin-bottom:10px}
+.step3 .t{font-weight:700}
+.step3 .d{font-size:14px;color:var(--greige)}
+.svg-ribbon{width:20px;height:20px;vertical-align:-3px}
+@media(max-width:720px){ .steps3{grid-template-columns:1fr} }
+
+@media(max-width:720px){
+  .hero h1{font-size:28px}
+  .story{grid-template-columns:1fr}
+  .tbl{grid-template-columns:1fr}
+  .voices{grid-template-columns:1fr}
+  .bgrid{grid-template-columns:1fr}
+  .bitem.hero-benefit{grid-column:span 1}
+  .bignum .n{font-size:48px}
+  body{padding-bottom:60px}
+}
+@media(min-width:721px){ .sticky{display:none} }
+/* === アニメーション === */
+.js body>section,.js body>header,.js body>footer{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.js body>section.in,.js body>header.in,.js body>footer.in{opacity:1;transform:none}
+.js .lphead{opacity:1!important;transform:none!important}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.voice,.bitem,.step3,.tcard{transition:transform .25s ease,box-shadow .25s ease}
+.voice:hover,.bitem:hover,.step3:hover{transform:translateY(-6px);box-shadow:0 16px 32px rgba(178,62,99,.16)}
+.btn{transition:transform .15s ease,box-shadow .2s ease,filter .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.12);filter:brightness(1.05)}
+.btn:active{transform:translateY(0)}
+.badge{transition:transform .2s ease,box-shadow .2s ease}
+.badge:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(214,88,126,.18)}
+.sticky a{transition:filter .2s ease}
+.sticky a:hover{filter:brightness(1.08)}
+details{transition:box-shadow .2s ease}
+details[open]{box-shadow:0 8px 22px rgba(178,62,99,.09)}
+summary:after{transition:transform .2s ease}
+.progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--rose),var(--rose-deep));z-index:60;transition:width .08s linear}
+/* LP slim header（フルメニューは載せず集中型を維持） */
+.lphead{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid #f0e3e7}
+.lphead .wrap{max-width:1320px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;height:58px}
+.lphead .logo{font-weight:900;color:var(--rose-deep);font-size:15px;text-decoration:none}
+.lphead .right{display:flex;align-items:center;gap:14px}
+.lphead .back{font-size:13px;color:var(--greige);text-decoration:none;font-weight:600}
+.lphead .back:hover{color:var(--rose-deep)}
+.lphead .htel{background:var(--rose);color:#fff;padding:8px 14px;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none}
+@media(max-width:600px){ .lphead .logo{font-size:13px} .lphead .back{display:none} }
+.svg-ribbon{animation:rpulse 2.8s ease-in-out infinite;transform-origin:center}
+@keyframes rpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+@media(prefers-reduced-motion:reduce){.js body>section,.js body>header,.js body>footer{opacity:1!important;transform:none!important;transition:none}.voice,.bitem,.step3,.btn,.badge,.svg-ribbon{animation:none;transition:none}}
+
+/* === 共通グローバルナビ（ハンバーガー固定・社名中央） === */
+.nav{position:sticky;top:0;z-index:50;background:#fbf7f4;border-bottom:1px solid #eedde2}
+.navbar .row{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px;gap:10px}
+.navtoggle{justify-self:end;background:none;border:0;font-size:28px;color:var(--rose-deep);cursor:pointer;line-height:1;position:relative;z-index:60}
+.logo{justify-self:center;text-align:center;font-weight:900;color:var(--rose-deep);font-size:clamp(15px,2.3vw,21px);white-space:nowrap;text-decoration:none;letter-spacing:.02em}
+.navtop-right{justify-self:end;display:flex;align-items:center;gap:10px}
+.htel{display:inline-flex;align-items:center;gap:7px;background:var(--rose);color:#fff;padding:9px 16px;border-radius:999px;font-weight:700;text-decoration:none;font-size:15px;white-space:nowrap}
+.ico-tel{width:16px;height:16px}
+.menu li.telitem a .ico-tel{vertical-align:-3px;margin-right:4px}
+.nav.open::after{content:"";position:fixed;inset:0;background:rgba(46,42,40,.4);z-index:48}
+.menu{position:fixed;top:0;right:0;left:auto;bottom:0;width:min(420px,84vw);z-index:50;list-style:none;display:flex;flex-direction:column;align-items:stretch;background:#fff;padding:74px 22px 28px;overflow-y:auto;transform:translateX(100%);transition:transform .3s ease;box-shadow:-12px 0 40px rgba(0,0,0,.14)}
+.nav.open .menu{transform:none}
+.menu>li{position:relative}
+.menu>li>a{display:block;text-decoration:none;color:var(--ink);font-weight:700;padding:14px 6px;border-bottom:1px solid #f3e7eb;font-size:17px}
+.menu>li>a.hot{color:var(--rose-deep)}
+.has-sub>a:after{content:"\25BE";float:right;color:var(--rose)}
+.submenu{list-style:none;padding:2px 0 10px 16px}
+.submenu li a{display:block;text-decoration:none;color:var(--greige);padding:9px 6px;font-size:14px}
+.submenu li a:hover{color:var(--rose-deep)}
+.menu li.telitem a{display:inline-block;margin-top:16px;background:var(--rose);color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;border-bottom:0;text-align:center}
+@media(max-width:600px){ .htel{display:none} }
+
+/* 写真差し込み */
+.ph.hasimg,.heroimg.hasimg{position:relative;padding:0;border:0;overflow:hidden}
+.ph img,.heroimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<div class="progress"></div>
+
+<div class="mocknote">★ デザイン方向確認用モックアップ（本番・ローカルWPに影響なし／写真枠は仮）　|　<a href="top.html">TOPページ版を見る</a></div>
+
+<!-- LP slim header -->
+<div class="nav" id="nav">
+  <div class="navbar"><div class="row">
+    <span class="navspacer"></span>
+    <a class="logo" href="top.html">ウインライフ ヘルパーステーション</a>
+    <div class="navtop-right">
+      <a class="htel" href="tel:0924109285"><svg class="ico-tel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg><span>092-410-9285</span></a>
+      <button class="navtoggle" id="navtoggle" aria-label="メニュー">☰</button>
+    </div>
+  </div></div>
+  <ul class="menu">
+    <li class="has-sub"><a href="about.html">私たちについて</a><ul class="submenu"><li><a href="about.html#greeting">ごあいさつ</a></li><li><a href="about.html#company">会社概要</a></li><li><a href="about.html#story">設立ストーリー</a></li><li><a href="news.html">社会貢献活動</a></li></ul></li>
+    <li class="has-sub"><a href="service-homon.html">サービス</a><ul class="submenu"><li><a href="service-homon.html">訪問介護（介護保険）</a></li><li><a href="service-kyotaku.html">居宅介護・重度訪問介護</a></li><li><a href="service-jihi.html">自費サービス</a></li><li><a href="top.html#flow">ご利用の流れ</a></li><li><a href="info-disclosure.html#juyo">重要事項説明書</a></li></ul></li>
+    <li class="has-sub"><a class="hot" href="recruit-lp.html">採用情報</a><ul class="submenu"><li><a href="recruit-lp.html">募集要項</a></li><li><a href="recruit-lp.html#benefits">福利厚生・補助制度</a></li><li><a href="recruit-lp.html">研修・資格支援</a></li><li><a href="recruit-lp.html">働く環境の透明性</a></li></ul></li>
+    <li class="has-sub"><a href="news.html">お知らせ</a><ul class="submenu"><li><a href="news.html">お知らせ</a></li><li><a href="news.html">活動報告</a></li><li><a href="news.html">決算・運営報告</a></li><li><a href="news.html">立ち上げ日記（2022）</a></li></ul></li>
+    <li class="has-sub"><a href="info-disclosure.html">情報公開</a><ul class="submenu"><li><a href="info-disclosure.html#unei">運営規程</a></li><li><a href="info-disclosure.html#juyo">重要事項説明書</a></li><li><a href="info-disclosure.html#shishin">各種指針・規程</a></li><li><a href="info-disclosure.html#kessan">決算報告（2022〜2025）</a></li></ul></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+    <li class="telitem"><a class="navtel" href="tel:0924109285"><svg class="ico-tel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg> 092-410-9285</a></li>
+  </ul>
+</div>
+
+<!-- ① HERO -->
+<header class="hero">
+  <div class="ph heroban hasimg"><img src="assets/img/p16364307.jpg" alt="スタッフと利用者"></div>
+  <div class="inner">
+  <span class="tag">福岡市東区の訪問介護ヘルパー募集</span>
+  <h1>あなたの「<em>事情</em>」を、<br>はじめから受け止める職場です。</h1>
+  <p>病気・子育て・介護・障がいのあるお子さん。どんな事情も、最初から受け止めます。<br>週1日〜・直行直帰OK。あなたのペースで、無理なく続けられる職場です。</p>
+  <div class="badges">
+    <div class="badge"><div class="k">時給</div><div class="v">1,430〜2,200円</div></div>
+    <div class="badge"><div class="k">勤務</div><div class="v">週1日〜OK</div></div>
+    <div class="badge"><div class="k">経験</div><div class="v">未経験・ブランク歓迎</div></div>
+  </div>
+  <div class="cta-row">
+    <a class="btn btn-tel" href="tel:0924109285">📞 電話で応募・相談</a>
+    <a class="btn btn-rose" href="#apply">✏ 30秒で応募</a>
+    <a class="btn btn-ghost" href="#story">▼ どんな会社？</a>
+  </div>
+  </div>
+</header>
+
+<!-- ② 想い -->
+<section id="story">
+  <div class="wrap">
+    <h2><span class="sub">OUR STORY</span>「働きやすさ」を、いちばん大切にしています。</h2>
+    <div class="story">
+      <div class="ph hasimg"><img src="assets/img/p7345476.jpg" alt="代表"></div>
+      <div>
+        <blockquote>
+          ウインライフは、末期がんと闘った代表の妻を看取った経験から生まれました。
+          「家族との時間を守れる職場をつくりたい」——その想いが原点です。<br><br>
+          だから私たちは、病気や家庭の事情を抱える方を積極的に採用します。
+          がんサバイバー、母子・父子家庭、障がいのあるお子さんの親御さん。
+          あなたの事情に合わせて、シフトは柔軟に組み直します。お休みも気軽にどうぞ。
+        </blockquote>
+        <div class="by">＿ウインライフ合同会社 代表社員 西濱昌典</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ③ 給与 -->
+<section class="salary">
+  <div class="wrap">
+    <h2><span class="sub">SALARY</span>給与・待遇</h2>
+    <div class="bignum">
+      <div class="n">時給 <span data-count="1430">1,430</span><small>円</small> <small>〜</small> <span data-count="2200">2,200</span><small>円</small></div>
+      <div class="note">処遇改善手当等を含む／移動手当あり（会社規定による）</div>
+    </div>
+    <div class="tbl">
+      <div class="tcard"><div class="k">雇用形態</div><div class="v">パート（正社員登用あり・実績あり）</div></div>
+      <div class="tcard"><div class="k">勤務時間</div><div class="v">8:00〜17:00の間で1時間以上（応相談）</div></div>
+      <div class="tcard"><div class="k">勤務日数</div><div class="v">週1日〜（相談可）</div></div>
+      <div class="tcard"><div class="k">休日</div><div class="v">週休二日制・有給あり</div></div>
+      <div class="tcard"><div class="k">通勤</div><div class="v">マイカー可／直行直帰OK</div></div>
+      <div class="tcard"><div class="k">保険</div><div class="v">労災保険ほか（採用条件による）</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ 1日の流れ -->
+<section>
+  <div class="wrap">
+    <h2><span class="sub">A DAY</span>ヘルパーの1日（パート・直行直帰の例）</h2>
+    <ul class="steps">
+      <li><b>9:00</b>　自宅から利用者様宅へ直行（マイカー／自転車／徒歩）</li>
+      <li><b>9:30</b>　Aさん宅：身体介護・生活援助</li>
+      <li><b>11:00</b>　Bさん宅：食事介助</li>
+      <li><b>12:00</b>　そのまま帰宅・休憩</li>
+      <li><b>14:00</b>　Cさん宅（午後シフトの場合）→ 終わったら直帰</li>
+    </ul>
+    <p style="color:var(--greige)">※未経験の方は、最初の数回は先輩職員が一緒に訪問。「納得いくまで」同行するので安心です。</p>
+  </div>
+</section>
+
+<!-- ⑤ スタッフの声 -->
+<section>
+  <div class="wrap">
+    <h2><span class="sub">VOICE</span>働く仲間の声</h2>
+    <p class="lead">※実名・顔出しのインタビューを掲載予定（取材可否は要確認）。下記は仮テキスト。</p>
+    <div class="voices">
+      <div class="voice">
+        <div class="ph round hasimg"><img src="assets/img/p16810647.jpg" alt="スタッフ"></div>
+        <div class="who">○○さん（50代・パート・未経験スタート）</div>
+        <div class="msg">「ブランクがありましたが、最初は一緒に入ってもらえたので不安なく始められました。」</div>
+      </div>
+      <div class="voice">
+        <div class="ph round hasimg"><img src="assets/img/p18459192.jpg" alt="スタッフ"></div>
+        <div class="who">○○さん（大学生・非常勤）</div>
+        <div class="msg">「九産大の近くなので授業の合間に。シフトの相談に乗ってもらえて助かっています。」</div>
+      </div>
+      <div class="voice">
+        <div class="ph round hasimg"><img src="assets/img/p8088861.jpg" alt="スタッフ"></div>
+        <div class="who">○○さん（子育て中）</div>
+        <div class="msg">「子どもの予定に合わせてシフトを組み直してもらえるのが一番ありがたいです。」</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ 福利厚生 -->
+<section class="benefits">
+  <div class="wrap">
+    <h2><span class="sub">BENEFITS</span>人を大切にする、ウインライフの福利厚生</h2>
+    <div class="bgrid">
+      <div class="bitem hero-benefit">
+        <div class="ic"><svg class="svg-ribbon" style="width:30px;height:30px" viewBox="0 0 24 24" fill="#D6587E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-1.2 1.6-1.2 3.4 0 5 1.2-1.6 1.2-3.4 0-5zm-1 5.5L4.5 20l3-1 1.2 2.6L13 11.5 11 7.5zm2 0L11 11.5l4.3 10.1L16.5 19l3 1L13 7.5z"/></svg></div>
+        <div class="t">乳がん検診 全額補助</div>
+        <div class="d">福岡市/県の検診料を全額。医療機関の検診も上限3,000円補助（2026年1月〜）。社則にある前から、代表が全職員に約束してきたものです。</div>
+      </div>
+      <div class="bitem"><div class="ic">💉</div><div class="t">インフルワクチン補助</div><div class="d">予防接種を補助</div></div>
+      <div class="bitem"><div class="ic">📚</div><div class="t">研修・資格取得補助</div><div class="d">研修費・資格取得を支援</div></div>
+      <div class="bitem"><div class="ic">🎓</div><div class="t">無資格者の資格取得補助</div><div class="d">資格がなくても取得を支援</div></div>
+      <div class="bitem"><div class="ic">🧥</div><div class="t">雨合羽 購入補助</div><div class="d">訪問時の雨具を補助</div></div>
+      <div class="bitem"><div class="ic">🤝</div><div class="t">紹介一時金</div><div class="d">知人紹介で一時金</div></div>
+      <div class="bitem"><div class="ic">🔄</div><div class="t">柔軟なシフト</div><div class="d">事情に応じて組み直し・休み取得しやすい</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ FAQ -->
+<section>
+  <div class="wrap">
+    <h2><span class="sub">FAQ</span>よくあるご質問</h2>
+    <details open><summary>介護の経験がなくても応募できますか？</summary><p>はい。未経験・ブランクの方も歓迎です。最初は先輩職員が一緒に訪問し、納得いくまで同行します。</p></details>
+    <details><summary>資格は必要ですか？</summary><p>初任者研修／ホームヘルパー2級／介護福祉士のいずれかが必要です。お持ちでない方には資格取得の補助制度があります。</p></details>
+    <details><summary>週どれくらい働けますか？</summary><p>週1日から相談可能です。ご都合に合わせて柔軟に調整します。</p></details>
+    <details><summary>車は必要ですか？</summary><p>マイカー・自転車・徒歩など、ご都合の良い移動手段でOKです（AT限定可）。</p></details>
+    <details><summary>学生でも働けますか？</summary><p>はい。九産大前駅 徒歩8分の立地で、大学生の非常勤も積極採用しています。</p></details>
+    <details><summary>子育てや家庭の事情があっても大丈夫？</summary><p>むしろ歓迎です。事情を理解し、柔軟に対応するのが私たちの方針です。</p></details>
+  </div>
+</section>
+
+<!-- 応募3ステップ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2><span class="sub">EASY</span>応募はカンタン3ステップ</h2>
+    <div class="steps3">
+      <div class="step3"><div class="no">1</div><div class="t">電話・LINE・フォームで連絡</div><div class="d">「まずは相談だけ」もOK</div></div>
+      <div class="step3"><div class="no">2</div><div class="t">面接（1回・即決）</div><div class="d">事業所または近くで気軽に</div></div>
+      <div class="step3"><div class="no">3</div><div class="t">お仕事スタート</div><div class="d">最初は先輩が一緒に同行</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑧ 応募 -->
+<section id="apply" style="padding-top:24px">
+  <div class="wrap">
+    <div class="applybox">
+      <h2 style="font-size:28px">30秒で応募完了</h2>
+      <div class="form">
+        <label>お名前</label><input type="text" placeholder="山田 花子">
+        <label>電話番号</label><input type="tel" placeholder="090-0000-0000">
+        <label>ご希望</label>
+        <div class="radio"><span>○ パート</span><span>○ 正社員希望</span><span>○ まずは相談だけ</span></div>
+        <label style="margin-top:16px">一言（任意）</label><input type="text" placeholder="気になることなど">
+        <button class="btn btn-rose" style="width:100%;justify-content:center;margin-top:20px">この内容で応募する</button>
+      </div>
+      <p style="margin:18px 0 10px">お電話でも受付中　📞 092-410-9285（担当：西濱）</p>
+      <div class="cta-row">
+        <a class="btn btn-tel" href="tel:0924109285">📞 電話する</a>
+        <a class="btn btn-line" href="#">LINEで問い合わせ</a>
+      </div>
+      <p style="font-size:12px;opacity:.8;margin-top:14px">※LINE応募の運用は要確認</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>ウインライフ ヘルパーステーション</strong>（ウインライフ合同会社）<br>
+    〒813-0002 福岡市東区下原4-5-8-102／TEL <a href="tel:0924109285">092-410-9285</a>／FAX 092-710-8784<br>
+    最寄り：JR鹿児島本線 九産大前駅 徒歩8分<br>
+    <span style="opacity:.6">法人番号 2290003012103｜訪問介護・居宅介護・重度訪問介護・自費サービス</span>
+  </div>
+</footer>
+
+<!-- sticky CTA (SP) -->
+<nav class="sticky">
+  <a class="tel" href="tel:0924109285">📞 電話で応募</a>
+  <a class="apply" href="#apply">✏ 30秒で応募</a>
+</nav>
+
+<script>
+(function(){
+  var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var blocks=document.querySelectorAll('body>section,body>header,body>footer');
+  function countUp(el){var to=+el.getAttribute('data-count'),dur=1000,t0=null;
+    function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);
+      el.textContent=Math.floor(p*to).toLocaleString('ja-JP');
+      if(p<1)requestAnimationFrame(step);else el.textContent=to.toLocaleString('ja-JP');}
+    requestAnimationFrame(step);}
+  if(rm){blocks.forEach(function(b){b.classList.add('in')});}
+  else{
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;var el=e.target;el.classList.add('in');
+      el.querySelectorAll('.voice,.bitem,.step3,.tcard,.steps li').forEach(function(c,i){c.style.animation='rise .55s both';c.style.animationDelay=(i*0.07)+'s';});
+      el.querySelectorAll('[data-count]').forEach(countUp);
+      io.unobserve(el);});},{threshold:.14});
+    blocks.forEach(function(b){io.observe(b)});
+  }
+  var pb=document.querySelector('.progress');
+  if(pb)addEventListener('scroll',function(){var h=document.documentElement,max=(h.scrollHeight-h.clientHeight)||1;pb.style.width=(h.scrollTop/max*100)+'%';},{passive:true});
+})();
+</script>
+<script>
+(function(){var nav=document.getElementById('nav'),tg=document.getElementById('navtoggle');if(!nav||!tg)return;
+tg.addEventListener('click',function(){var o=nav.classList.toggle('open');tg.textContent=o?'\u2715':'\u2630';});
+nav.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');tg.textContent='\u2630';});});})();
+</script>
+</body>
+</html>

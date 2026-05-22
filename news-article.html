@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>動画コンテスト最優秀賞｜お知らせ｜ウインライフ（モックアップ）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#D6587E;--rose-deep:#B23E63;--greige:#7A6E66;--base:#FBF7F4;--tint:#F6ECEF;--neutral:#F4F1EE;--ink:#2E2A28;--tel:#E8843C;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--base);line-height:2;font-size:17px;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:820px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+a{color:inherit}
+.lphead{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #f0e3e7}
+.lphead .row{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;height:58px}
+.lphead .logo{font-weight:900;color:var(--rose-deep);font-size:15px;text-decoration:none;white-space:nowrap}
+.lphead .right{display:flex;align-items:center;gap:14px}
+.lphead .back{font-size:13px;color:var(--greige);text-decoration:none;font-weight:600}
+.lphead .htel{background:var(--rose);color:#fff;padding:8px 14px;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+@media(max-width:600px){ .lphead .logo{font-size:13px} .lphead .back{display:none} .lphead .htel{font-size:13px;padding:7px 11px} }
+article{padding:38px 0 24px}
+.crumb{font-size:13px;color:var(--greige);margin-bottom:16px}
+.meta{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.c{font-size:12px;font-weight:700;padding:3px 12px;border-radius:999px;background:#fae3ea;color:var(--rose-deep)}
+.date{color:var(--greige);font-size:14px;font-weight:700}
+h1{font-size:clamp(24px,4vw,32px);font-weight:900;line-height:1.5;margin-bottom:20px}
+.heroimg{background:repeating-linear-gradient(45deg,#efe3e6,#efe3e6 12px,#f6ecef 12px,#f6ecef 24px);border:1px dashed #d8b9c3;border-radius:16px;min-height:300px;display:flex;align-items:center;justify-content:center;color:#b08;font-weight:700;font-size:13px;margin-bottom:28px}
+article p{margin-bottom:20px}
+article h2{font-size:20px;font-weight:900;padding-left:12px;border-left:5px solid var(--rose);margin:28px 0 14px}
+.quote{background:var(--neutral);border-radius:12px;padding:18px 20px;font-size:15px;color:#555;margin-bottom:20px}
+.share{display:flex;gap:10px;margin:24px 0}
+.share a{font-size:13px;font-weight:700;text-decoration:none;background:var(--tint);color:var(--rose-deep);padding:8px 14px;border-radius:999px}
+.nav-prev{display:flex;justify-content:space-between;border-top:1px solid #eedde2;padding:24px 0 40px;font-weight:700;font-size:14px}
+.nav-prev a{text-decoration:none;color:var(--rose-deep)}
+.backbtn{display:inline-block;text-align:center;background:#fff;border:1px solid #eedde2;border-radius:999px;padding:12px 24px;text-decoration:none;font-weight:700;color:var(--rose-deep)}
+.mocknote{background:#332;color:#ffd;text-align:center;padding:8px;font-size:13px;font-weight:700}
+.mocknote a{color:#ffd}
+footer{background:#fff;border-top:1px solid #f0e3e7;color:var(--greige);padding:30px 0;font-size:13px;text-align:center}
+footer a{color:var(--rose-deep)}
+
+/* === 共通グローバルナビ（ハンバーガー固定・社名中央） === */
+.nav{position:sticky;top:0;z-index:50;background:#fbf7f4;border-bottom:1px solid #eedde2}
+.navbar .row{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px;gap:10px}
+.navtoggle{justify-self:end;background:none;border:0;font-size:28px;color:var(--rose-deep);cursor:pointer;line-height:1;position:relative;z-index:60}
+.logo{justify-self:center;text-align:center;font-weight:900;color:var(--rose-deep);font-size:clamp(15px,2.3vw,21px);white-space:nowrap;text-decoration:none;letter-spacing:.02em}
+.navtop-right{justify-self:end;display:flex;align-items:center;gap:10px}
+.htel{display:inline-flex;align-items:center;gap:7px;background:var(--rose);color:#fff;padding:9px 16px;border-radius:999px;font-weight:700;text-decoration:none;font-size:15px;white-space:nowrap}
+.ico-tel{width:16px;height:16px}
+.menu li.telitem a .ico-tel{vertical-align:-3px;margin-right:4px}
+.nav.open::after{content:"";position:fixed;inset:0;background:rgba(46,42,40,.4);z-index:48}
+.menu{position:fixed;top:0;right:0;left:auto;bottom:0;width:min(420px,84vw);z-index:50;list-style:none;display:flex;flex-direction:column;align-items:stretch;background:#fff;padding:74px 22px 28px;overflow-y:auto;transform:translateX(100%);transition:transform .3s ease;box-shadow:-12px 0 40px rgba(0,0,0,.14)}
+.nav.open .menu{transform:none}
+.menu>li{position:relative}
+.menu>li>a{display:block;text-decoration:none;color:var(--ink);font-weight:700;padding:14px 6px;border-bottom:1px solid #f3e7eb;font-size:17px}
+.menu>li>a.hot{color:var(--rose-deep)}
+.has-sub>a:after{content:"\25BE";float:right;color:var(--rose)}
+.submenu{list-style:none;padding:2px 0 10px 16px}
+.submenu li a{display:block;text-decoration:none;color:var(--greige);padding:9px 6px;font-size:14px}
+.submenu li a:hover{color:var(--rose-deep)}
+.menu li.telitem a{display:inline-block;margin-top:16px;background:var(--rose);color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;border-bottom:0;text-align:center}
+@media(max-width:600px){ .htel{display:none} }
+
+/* 写真差し込み */
+.ph.hasimg,.heroimg.hasimg{position:relative;padding:0;border:0;overflow:hidden}
+.ph img,.heroimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+</style>
+</head>
+<body>
+<div class="mocknote">★ 記事ページ モックアップ　|　<a href="news.html">一覧へ戻る</a>・<a href="top.html">TOP</a></div>
+<div class="nav" id="nav">
+  <div class="navbar"><div class="row">
+    <span class="navspacer"></span>
+    <a class="logo" href="top.html">ウインライフ ヘルパーステーション</a>
+    <div class="navtop-right">
+      <a class="htel" href="tel:0924109285"><svg class="ico-tel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg><span>092-410-9285</span></a>
+      <button class="navtoggle" id="navtoggle" aria-label="メニュー">☰</button>
+    </div>
+  </div></div>
+  <ul class="menu">
+    <li class="has-sub"><a href="about.html">私たちについて</a><ul class="submenu"><li><a href="about.html#greeting">ごあいさつ</a></li><li><a href="about.html#company">会社概要</a></li><li><a href="about.html#story">設立ストーリー</a></li><li><a href="news.html">社会貢献活動</a></li></ul></li>
+    <li class="has-sub"><a href="service-homon.html">サービス</a><ul class="submenu"><li><a href="service-homon.html">訪問介護（介護保険）</a></li><li><a href="service-kyotaku.html">居宅介護・重度訪問介護</a></li><li><a href="service-jihi.html">自費サービス</a></li><li><a href="top.html#flow">ご利用の流れ</a></li><li><a href="info-disclosure.html#juyo">重要事項説明書</a></li></ul></li>
+    <li class="has-sub"><a class="hot" href="recruit-lp.html">採用情報</a><ul class="submenu"><li><a href="recruit-lp.html">募集要項</a></li><li><a href="recruit-lp.html#benefits">福利厚生・補助制度</a></li><li><a href="recruit-lp.html">研修・資格支援</a></li><li><a href="recruit-lp.html">働く環境の透明性</a></li></ul></li>
+    <li class="has-sub"><a href="news.html">お知らせ</a><ul class="submenu"><li><a href="news.html">お知らせ</a></li><li><a href="news.html">活動報告</a></li><li><a href="news.html">決算・運営報告</a></li><li><a href="news.html">立ち上げ日記（2022）</a></li></ul></li>
+    <li class="has-sub"><a href="info-disclosure.html">情報公開</a><ul class="submenu"><li><a href="info-disclosure.html#unei">運営規程</a></li><li><a href="info-disclosure.html#juyo">重要事項説明書</a></li><li><a href="info-disclosure.html#shishin">各種指針・規程</a></li><li><a href="info-disclosure.html#kessan">決算報告（2022〜2025）</a></li></ul></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+    <li class="telitem"><a class="navtel" href="tel:0924109285"><svg class="ico-tel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg> 092-410-9285</a></li>
+  </ul>
+</div>
+
+<div class="wrap"><article>
+  <div class="crumb"><a href="top.html">ホーム</a> ＞ <a href="news.html">お知らせ・ブログ</a> ＞ 活動報告</div>
+  <div class="meta"><span class="c">活動報告</span><span class="date">2026.01</span></div>
+  <h1>「おおきな福祉のまちづくり」動画コンテストで最優秀賞を受賞しました</h1>
+  <div class="heroimg hasimg"><img src="assets/img/p16810648.jpg" alt="活動報告"></div>
+
+  <p>2025年10月に福岡市後援で開催された動画コンテストにおいて、弊社が制作に関わった作品が最優秀賞を受賞しました。</p>
+  <p>代表が日頃から協働しているネパール人クリエイターのアニル氏とともに、弊社が撮影現場の調整や構成を担当。表彰式には、撮影現場として受け入れてくださった利用者様も同席し、共に喜びを分かち合いました。</p>
+
+  <h2>「いっしょに生きる｜Living Together」</h2>
+  <p>学校法人愛和学園 グローバルクリエイター専門学校 チーム アニルによる作品です。介護の現場から、誰もが「いっしょに生きる」社会への想いを込めました。</p>
+  <div class="quote">※ 動画リンク・クレジット等はこちらに掲載（本番で差し替え）。</div>
+
+  <p>ウインライフは、訪問介護という本業を続けながら、地域や社会への貢献にも取り組んでいます。これからも、ささやかでも意味のある活動を続けてまいります。</p>
+
+  <div class="share">
+    <a href="#">X でシェア</a>
+    <a href="#">Facebook</a>
+    <a href="#">LINE で送る</a>
+  </div>
+</article>
+
+  <div class="nav-prev">
+    <a href="news-article.html">← 前の記事</a>
+    <a href="news-article.html">次の記事 →</a>
+  </div>
+
+  <div style="text-align:center;padding-bottom:40px"><a class="backbtn" href="news.html">お知らせ・ブログ一覧へ</a></div>
+</div>
+
+<footer>ウインライフ ヘルパーステーション／TEL <a href="tel:0924109285">092-410-9285</a>　<a href="top.html">← サイトトップへ</a></footer>
+<script>
+(function(){var nav=document.getElementById('nav'),tg=document.getElementById('navtoggle');if(!nav||!tg)return;
+tg.addEventListener('click',function(){var o=nav.classList.toggle('open');tg.textContent=o?'\u2715':'\u2630';});
+nav.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');tg.textContent='\u2630';});});})();
+</script>
+</body>
+</html>

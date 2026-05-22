@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>訪問介護（介護保険）｜ウインライフ ヘルパーステーション（モックアップ）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#D6587E;--rose-deep:#B23E63;--greige:#7A6E66;--base:#FBF7F4;--tint:#F6ECEF;--neutral:#F4F1EE;--ink:#2E2A28;--tel:#E8843C;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--base);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+a{color:inherit}
+.lphead{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #f0e3e7}
+.lphead .row{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;height:58px}
+.lphead .logo{font-weight:900;color:var(--rose-deep);font-size:15px;text-decoration:none;white-space:nowrap}
+.lphead .right{display:flex;align-items:center;gap:14px}
+.lphead .back{font-size:13px;color:var(--greige);text-decoration:none;font-weight:600}
+.lphead .htel{background:var(--rose);color:#fff;padding:8px 14px;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+@media(max-width:600px){ .lphead .logo{font-size:13px} .lphead .back{display:none} .lphead .htel{font-size:13px;padding:7px 11px} }
+.shero{background:var(--tint);padding:42px 0}
+.crumb{font-size:13px;color:var(--greige);margin-bottom:10px}
+.shero h1{font-size:clamp(26px,4vw,38px);font-weight:900}
+.shero h1 .en{display:block;font-size:13px;font-weight:700;color:var(--rose);letter-spacing:.12em;margin-bottom:4px}
+.shero p{margin-top:12px;color:#5a504a;max-width:680px}
+.sec{padding:46px 0}
+.sec h2{font-size:22px;font-weight:900;padding-left:14px;border-left:6px solid var(--rose);margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{background:#fff;border:1px solid #eedde2;border-radius:999px;padding:9px 16px;font-weight:700;font-size:14px}
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.icard{background:#fff;border:1px solid #eedde2;border-radius:14px;padding:20px}
+.icard h3{font-size:16px;color:var(--rose-deep);margin-bottom:6px}
+.icard p{font-size:14px;color:#555}
+@media(max-width:600px){ .cards2{grid-template-columns:1fr} }
+.fee{background:var(--neutral);border-radius:14px;padding:22px}
+.fee b{color:var(--rose-deep)}
+.pdf{display:inline-block;margin-top:14px;font-size:14px;font-weight:700;color:var(--rose-deep);text-decoration:none}
+.pdf:before{content:"▶ ";font-size:10px}
+.cta{background:var(--rose);color:#fff;border-radius:18px;padding:32px;text-align:center;margin:10px 0 40px}
+.cta h2{color:#fff;border:0;padding:0;font-size:22px;margin-bottom:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--rose-deep);text-decoration:none;font-weight:700;padding:14px 24px;border-radius:12px;margin-top:8px}
+.related{display:flex;gap:14px;flex-wrap:wrap;padding-bottom:40px}
+.related a{flex:1;min-width:200px;background:#fff;border:1px solid #eedde2;border-radius:12px;padding:16px;text-decoration:none;font-weight:700;color:var(--rose-deep)}
+.related a:hover{background:var(--tint)}
+.mocknote{background:#332;color:#ffd;text-align:center;padding:8px;font-size:13px;font-weight:700}
+.mocknote a{color:#ffd}
+footer{background:#fff;border-top:1px solid #f0e3e7;color:var(--greige);padding:30px 0;font-size:13px;text-align:center}
+footer a{color:var(--rose-deep)}
+
+/* === 共通グローバルナビ（ハンバーガー固定・社名中央） === */
+.nav{position:sticky;top:0;z-index:50;background:#fbf7f4;border-bottom:1px solid #eedde2}
+.navbar .row{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px;gap:10px}
+.navtoggle{justify-self:end;background:none;border:0;font-size:28px;color:var(--rose-deep);cursor:pointer;line-height:1;position:relative;z-index:60}
+.logo{justify-self:center;text-align:center;font-weight:900;color:var(--rose-deep);font-size:clamp(15px,2.3vw,21px);white-space:nowrap;text-decoration:none;letter-spacing:.02em}
+.navtop-right{justify-self:end;display:flex;align-items:center;gap:10px}
+.htel{display:inline-flex;align-items:center;gap:7px;background:var(--rose);color:#fff;padding:9px 16px;border-radius:999px;font-weight:700;text-decoration:none;font-size:15px;white-space:nowrap}
+.ico-tel{width:16px;height:16px}
+.menu li.telitem a .ico-tel{vertical-align:-3px;margin-right:4px}
+.nav.open::after{content:"";position:fixed;inset:0;background:rgba(46,42,40,.4);z-index:48}
+.menu{position:fixed;top:0;right:0;left:auto;bottom:0;width:min(420px,84vw);z-index:50;list-style:none;display:flex;flex-direction:column;align-items:stretch;background:#fff;padding:74px 22px 28px;overflow-y:auto;transform:translateX(100%);transition:transform .3s ease;box-shadow:-12px 0 40px rgba(0,0,0,.14)}
+.nav.open .menu{transform:none}
+.menu>li{position:relative}
+.menu>li>a{display:block;text-decoration:none;color:var(--ink);font-weight:700;padding:14px 6px;border-bottom:1px solid #f3e7eb;font-size:17px}
+.menu>li>a.hot{color:var(--rose-deep)}
+.has-sub>a:after{content:"\25BE";float:right;color:var(--rose)}
+.submenu{list-style:none;padding:2px 0 10px 16px}
+.submenu li a{display:block;text-decoration:none;color:var(--greige);padding:9px 6px;font-size:14px}
+.submenu li a:hover{color:var(--rose-deep)}
+.menu li.telitem a{display:inline-block;margin-top:16px;background:var(--rose);color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;border-bottom:0;text-align:center}
+@media(max-width:600px){ .htel{display:none} }
+</style>
+</head>
+<body>
+<div class="mocknote">★ サービス個別ページ モックアップ　|　<a href="top.html">TOP</a>・<a href="service-kyotaku.html">居宅・重度</a>・<a href="service-jihi.html">自費</a></div>
+<div class="nav" id="nav">
+  <div class="navbar"><div class="row">
+    <span class="navspacer"></span>
+    <a class="logo" href="top.html">ウインライフ ヘルパーステーション</a>
+    <div class="navtop-right">
+      <a class="htel" href="tel:0924109285"><svg class="ico-tel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg><span>092-410-9285</span></a>
+      <button class="navtoggle" id="navtoggle" aria-label="メニュー">☰</button>
+    </div>
+  </div></div>
+  <ul class="menu">
+    <li class="has-sub"><a href="about.html">私たちについて</a><ul class="submenu"><li><a href="about.html#greeting">ごあいさつ</a></li><li><a href="about.html#company">会社概要</a></li><li><a href="about.html#story">設立ストーリー</a></li><li><a href="news.html">社会貢献活動</a></li></ul></li>
+    <li class="has-sub"><a href="service-homon.html">サービス</a><ul class="submenu"><li><a href="service-homon.html">訪問介護（介護保険）</a></li><li><a href="service-kyotaku.html">居宅介護・重度訪問介護</a></li><li><a href="service-jihi.html">自費サービス</a></li><li><a href="top.html#flow">ご利用の流れ</a></li><li><a href="info-disclosure.html#juyo">重要事項説明書</a></li></ul></li>
+    <li class="has-sub"><a class="hot" href="recruit-lp.html">採用情報</a><ul class="submenu"><li><a href="recruit-lp.html">募集要項</a></li><li><a href="recruit-lp.html#benefits">福利厚生・補助制度</a></li><li><a href="recruit-lp.html">研修・資格支援</a></li><li><a href="recruit-lp.html">働く環境の透明性</a></li></ul></li>
+    <li class="has-sub"><a href="news.html">お知らせ</a><ul class="submenu"><li><a href="news.html">お知らせ</a></li><li><a href="news.html">活動報告</a></li><li><a href="news.html">決算・運営報告</a></li><li><a href="news.html">立ち上げ日記（2022）</a></li></ul></li>
+    <li class="has-sub"><a href="info-disclosure.html">情報公開</a><ul class="submenu"><li><a href="info-disclosure.html#unei">運営規程</a></li><li><a href="info-disclosure.html#juyo">重要事項説明書</a></li><li><a href="info-disclosure.html#shishin">各種指針・規程</a></li><li><a href="info-disclosure.html#kessan">決算報告（2022〜2025）</a></li></ul></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+    <li class="telitem"><a class="navtel" href="tel:0924109285"><svg class="ico-tel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg> 092-410-9285</a></li>
+  </ul>
+</div>
+
+<section class="shero"><div class="wrap">
+  <div class="crumb"><a href="top.html">ホーム</a> ＞ サービス ＞ 訪問介護</div>
+  <h1><span class="en">HOME-VISIT CARE</span>訪問介護（介護保険）</h1>
+  <p>要介護認定を受けた方のご自宅へ伺い、住み慣れた家での暮らしを支えます。福岡市全域に対応・直行直帰でスピーディーに。</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>こんな方に</h2>
+  <div class="chips">
+    <span>要介護1〜5の認定を受けた方</span>
+    <span>ひとりでの入浴・食事が不安</span>
+    <span>家事の支援が必要</span>
+    <span>ご家族の介護負担を減らしたい</span>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <h2>サービス内容</h2>
+  <div class="cards2">
+    <div class="icard"><h3>身体介護</h3><p>食事・入浴・排せつ・着替え・移動などの介助を行います。</p></div>
+    <div class="icard"><h3>生活援助</h3><p>調理・掃除・洗濯・買い物など、日常の家事をお手伝いします。</p></div>
+    <div class="icard"><h3>通院などの外出支援</h3><p>通院の付き添いなど、必要に応じて対応します。</p></div>
+    <div class="icard"><h3>ご家族の相談</h3><p>介護の不安・困りごとも、お気軽にご相談ください。</p></div>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <h2>料金の目安</h2>
+  <div class="fee">
+    <p><b>介護保険が適用</b>されます。利用料の自己負担は<b>原則1〜3割</b>（所得に応じて）。サービスの種類・時間・回数によって異なります。</p>
+    <p style="margin-top:8px;font-size:14px;color:var(--greige)">※ 詳しい料金は、要介護度やケアプランによって変わります。お気軽にお問い合わせください。</p>
+    <a class="pdf" href="info-disclosure.html#unei">運営規程（介護保険）PDFを見る</a>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="cta">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>「何から始めれば？」のご相談だけでも歓迎です。</p>
+  <a class="btn" href="contact.html">介護のご相談はこちら →</a>
+</div></div>
+
+<div class="wrap"><div class="related">
+  <a href="service-kyotaku.html">居宅介護・重度訪問介護 →</a>
+  <a href="service-jihi.html">自費サービス →</a>
+  <a href="top.html#flow">ご利用までの流れ →</a>
+</div></div>
+
+<footer>ウインライフ ヘルパーステーション／TEL <a href="tel:0924109285">092-410-9285</a>　<a href="top.html">← サイトトップへ</a></footer>
+<script>
+(function(){var nav=document.getElementById('nav'),tg=document.getElementById('navtoggle');if(!nav||!tg)return;
+tg.addEventListener('click',function(){var o=nav.classList.toggle('open');tg.textContent=o?'\u2715':'\u2630';});
+nav.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');tg.textContent='\u2630';});});})();
+</script>
+</body>
+</html>
