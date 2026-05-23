@@ -50,7 +50,7 @@ body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--bas
 .wrap{width:100%;max-width:1440px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
 section{padding:76px 0}
 h2{font-size:32px;font-weight:900;line-height:1.4;margin-bottom:8px;text-align:center}
-h2 .sub{display:block;font-size:14px;font-weight:700;color:var(--rose);letter-spacing:.15em;margin-bottom:6px}
+h2 .sub{display:block;font-size:clamp(24px,3.8vw,40px);font-weight:900;color:var(--rose);letter-spacing:.06em;line-height:1.05;margin-bottom:8px}
 .lead{color:var(--greige);text-align:center;margin-bottom:36px}
 .btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:15px 26px;font-size:16px;font-weight:700;text-decoration:none;border:none;cursor:pointer;min-height:54px}
 .btn-rose{background:var(--rose);color:#fff}
@@ -96,9 +96,9 @@ h2 .sub{display:block;font-size:14px;font-weight:700;color:var(--rose);letter-sp
 @keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.12) translate(-2%,-2%)}}
 .hero-veil{position:absolute;inset:0;z-index:1;background:rgba(255,255,255,.12)}
 .hero-content{position:relative;z-index:2;max-width:1040px;padding:0 24px}
-.hero h1{font-size:clamp(34px,5.2vw,52px);font-weight:900;line-height:1.4;margin-bottom:16px;color:var(--ink);text-shadow:0 2px 18px rgba(255,255,255,.75)}
+.hero h1{font-size:clamp(22px,6.2vw,52px);font-weight:900;line-height:1.4;margin-bottom:16px;color:var(--ink);text-shadow:0 2px 18px rgba(255,255,255,.75);word-break:keep-all;overflow-wrap:anywhere}
 .hero h1 em{color:var(--rose-deep);font-style:normal}
-.hero p{font-size:18px;margin-bottom:28px;color:#5a504a;text-shadow:0 1px 12px rgba(255,255,255,.8)}
+.hero p{font-size:clamp(15px,3.6vw,18px);margin-bottom:28px;color:#fff;font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,.6),0 0 3px rgba(0,0,0,.45)}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .hero-note{position:absolute;left:0;right:0;bottom:10px;z-index:2;text-align:center;font-size:12px;color:#9a8f88}
 @media(max-width:820px){ .hero{min-height:74vh} }
@@ -182,7 +182,10 @@ h2 .sub{display:block;font-size:14px;font-weight:700;color:var(--rose);letter-sp
 .info .v{font-weight:700;font-size:15px}
 @media(max-width:720px){ .cards3{grid-template-columns:1fr} .info{grid-template-columns:1fr} }
 
-footer{background:#3a3330;color:#cdbfc4;padding:48px 0;font-size:14px;text-align:center}
+footer{position:relative;margin-top:56px;background:linear-gradient(180deg,#F8DEE8,#F0BFD0);color:#8a4f62;padding:60px 0 40px;font-size:14px;text-align:center}
+footer::before{content:"";position:absolute;left:0;right:0;top:-44px;height:46px;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='46' viewBox='0 0 200 46' preserveAspectRatio='none'%3E%3Cpath d='M0 46 V24 Q50 0 100 24 T200 24 V46 Z' fill='%23F8DEE8'/%3E%3C/svg%3E") repeat-x bottom;background-size:200px 46px}
+footer strong{color:var(--rose-deep)}
+footer a{color:var(--rose-deep);font-weight:700}
 footer a{color:#fff}
 .mocknote{background:#332;color:#ffd;text-align:center;padding:8px;font-size:13px;font-weight:700}
 /* === アニメーション === */
@@ -209,7 +212,6 @@ footer a{color:#fff}
 </head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
-<div class="sidewave l" aria-hidden="true"></div>
 <div class="mocknote">★ TOPページ デザイン方向確認用モックアップ（本番・ローカルWPに影響なし／写真枠は仮）★</div>
 
 <!-- nav -->
