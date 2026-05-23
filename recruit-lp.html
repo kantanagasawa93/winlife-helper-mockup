@@ -118,8 +118,10 @@ details p{padding:0 0 16px;color:#444}
 .sticky .tel{background:var(--tel)}
 .sticky .apply{background:var(--rose-deep)}
 
-footer{background:#3a3330;color:#cdbfc4;padding:48px 0;font-size:14px}
-footer a{color:#fff}
+footer{position:relative;margin-top:56px;background:linear-gradient(180deg,#F8DEE8,#F0BFD0);color:#8a4f62;padding:60px 0 40px;font-size:14px;text-align:center}
+footer::before{content:"";position:absolute;left:0;right:0;top:-44px;height:46px;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='46' viewBox='0 0 200 46' preserveAspectRatio='none'%3E%3Cpath d='M0 46 V24 Q50 0 100 24 T200 24 V46 Z' fill='%23F8DEE8'/%3E%3C/svg%3E") repeat-x bottom;background-size:200px 46px}
+footer strong{color:var(--rose-deep)}
+footer a{color:var(--rose-deep);font-weight:700}
 
 .mocknote{background:#332;color:#ffd;text-align:center;padding:8px;font-size:13px;font-weight:700;letter-spacing:.05em}
 .mocknote a{color:#ffd;margin:0 8px}
@@ -220,7 +222,6 @@ summary:after{transition:transform .2s ease}
 </style>
 </head>
 <body>
-<div class="sidewave l" aria-hidden="true"></div>
 <script>document.documentElement.classList.add('js')</script>
 <div class="progress"></div>
 

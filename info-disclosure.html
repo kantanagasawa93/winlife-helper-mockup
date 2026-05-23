@@ -63,8 +63,10 @@ a{color:inherit}
 .dl:hover{transform:translateY(-2px);filter:brightness(1.05)}
 @media(max-width:600px){ .doclist li{flex-wrap:wrap} .dl{margin-left:48px} }
 
-footer{background:#fff;border-top:1px solid #f0e3e7;color:var(--greige);padding:36px 0;font-size:13px;margin-top:40px}
-footer a{color:var(--rose-deep)}
+footer{position:relative;margin-top:56px;background:linear-gradient(180deg,#F8DEE8,#F0BFD0);color:#8a4f62;padding:60px 0 40px;font-size:14px;text-align:center}
+footer::before{content:"";position:absolute;left:0;right:0;top:-44px;height:46px;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='46' viewBox='0 0 200 46' preserveAspectRatio='none'%3E%3Cpath d='M0 46 V24 Q50 0 100 24 T200 24 V46 Z' fill='%23F8DEE8'/%3E%3C/svg%3E") repeat-x bottom;background-size:200px 46px}
+footer strong{color:var(--rose-deep)}
+footer a{color:var(--rose-deep);font-weight:700}
 .mocknote{background:#332;color:#ffd;text-align:center;padding:8px;font-size:13px;font-weight:700}
 .mocknote a{color:#ffd}
 
@@ -110,7 +112,6 @@ footer a{color:var(--rose-deep)}
 </style>
 </head>
 <body>
-<div class="sidewave l" aria-hidden="true"></div>
 <div class="mocknote">★ 情報公開ページ モックアップ（本番・ローカルWPに影響なし／PDFリンクは仮）　|　<a href="top.html">TOPへ</a>・<a href="recruit-lp.html">求人LP</a></div>
 
 <!-- slim header -->

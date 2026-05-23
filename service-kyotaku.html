@@ -55,8 +55,10 @@ a{color:inherit}
 .related a:hover{background:var(--tint)}
 .mocknote{background:#332;color:#ffd;text-align:center;padding:8px;font-size:13px;font-weight:700}
 .mocknote a{color:#ffd}
-footer{background:#fff;border-top:1px solid #f0e3e7;color:var(--greige);padding:30px 0;font-size:13px;text-align:center}
-footer a{color:var(--rose-deep)}
+footer{position:relative;margin-top:56px;background:linear-gradient(180deg,#F8DEE8,#F0BFD0);color:#8a4f62;padding:60px 0 40px;font-size:14px;text-align:center}
+footer::before{content:"";position:absolute;left:0;right:0;top:-44px;height:46px;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='46' viewBox='0 0 200 46' preserveAspectRatio='none'%3E%3Cpath d='M0 46 V24 Q50 0 100 24 T200 24 V46 Z' fill='%23F8DEE8'/%3E%3C/svg%3E") repeat-x bottom;background-size:200px 46px}
+footer strong{color:var(--rose-deep)}
+footer a{color:var(--rose-deep);font-weight:700}
 
 /* === 共通グローバルナビ（ハンバーガー固定・社名中央） === */
 .nav{position:sticky;top:0;z-index:50;background:#fbf7f4;border-bottom:1px solid #eedde2}
@@ -100,7 +102,6 @@ footer a{color:var(--rose-deep)}
 </style>
 </head>
 <body>
-<div class="sidewave l" aria-hidden="true"></div>
 <div class="mocknote">★ サービス個別ページ モックアップ　|　<a href="top.html">TOP</a>・<a href="service-homon.html">訪問介護</a>・<a href="service-jihi.html">自費</a></div>
 <div class="nav" id="nav">
   <div class="navbar"><div class="row">
