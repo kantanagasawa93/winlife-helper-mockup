@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kantanagasawa93.github.io/winlife-helper-mockup/sitemap.xml
