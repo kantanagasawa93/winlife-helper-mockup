@@ -109,4 +109,4 @@ window.POSTS=[
    {t:'p',text:'\u4ecb\u8b77\u4fdd\u967a\u3068\u969c\u304c\u3044\u798f\u7949\u30b5\u30fc\u30d3\u30b9\u306e\u7533\u8acb\u30fb\u6599\u91d1\u4f53\u7cfb\u306b\u3064\u3044\u3066\u6574\u7406\u3057\u305f\u52d5\u753b\u3067\u3059\u3002'}
  ]}
 ];
-window.postThumb=function(p){for(var i=0;i<p.blocks.length;i++){var b=p.blocks[i];if(b.t==='video')return{type:'video',src:'https://img.youtube.com/vi/'+b.vid+'/hqdefault.jpg'};if(b.t==='figure')return{type:'img',src:b.img};}return{type:'doc'};};
+window.postThumb=function(p){for(var i=0;i<p.blocks.length;i++){var b=p.blocks[i];if(b.t==='video')return{type:'video',src:'assets/img/yt_'+b.vid+'.jpg'};if(b.t==='figure')return{type:'img',src:b.img};}return{type:'doc'};};
