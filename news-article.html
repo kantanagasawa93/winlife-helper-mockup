@@ -115,9 +115,16 @@ figure.bodyfig figcaption{font-size:13px;color:var(--greige);margin-top:8px}
 @keyframes sidewaveflow{from{background-position:left 0}to{background-position:left 280px}}
 @media(prefers-reduced-motion:reduce){ .sidewave{animation:none} }
 
+/* === A11y === */
+:focus-visible{outline:3px solid var(--rose);outline-offset:2px;border-radius:4px}
+.navtoggle:focus-visible{outline-offset:3px}
+.skiplink{position:absolute;left:8px;top:-44px;background:var(--rose-deep);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;z-index:200;transition:top .2s}
+.skiplink:focus{top:8px}
+
 </style>
 </head>
 <body>
+<a href="#post" class="skiplink">本文へスキップ</a>
 <div class="mocknote">★ 記事ページ モックアップ　|　<a href="news.html">一覧へ戻る</a>・<a href="top.html">TOP</a></div>
 <div class="nav" id="nav">
   <div class="navbar"><div class="row">
@@ -165,11 +172,11 @@ nav.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',f
 /* ===== \u30d6\u30ed\u30b0\u8a18\u4e8b\u30c7\u30fc\u30bf\uff08\u73fe\u884c\u30b5\u30a4\u30c8\u306e\u5b9f\u30b3\u30f3\u30c6\u30f3\u30c4\u306b\u6e96\u62e0\uff0f1\u8a18\u4e8b=1\u30da\u30fc\u30b8\uff09 ===== */
 function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 function renderBlock(b){
-  if(b.t==='video') return '<a class="ytlite" href="https://www.youtube.com/watch?v='+b.vid+'" target="_blank" rel="noopener" aria-label="\u52d5\u753b\u3092\u898b\u308b\uff1a'+esc(b.label)+'\uff08YouTube\uff09"><img src="assets/img/yt_'+b.vid+'.jpg" alt="'+esc(b.label)+'" loading="lazy"><span class="ytplay" aria-hidden="true"></span><span class="ytlabel">\u25b6 '+esc(b.label)+'\uff08YouTube\u3067\u518d\u751f\uff09</span></a>';
+  if(b.t==='video') return '<a class="ytlite" href="https://www.youtube.com/watch?v='+b.vid+'" target="_blank" rel="noopener" aria-label="\u52d5\u753b\u3092\u898b\u308b\uff1a'+esc(b.label)+'\uff08YouTube\uff09"><img src="assets/img/yt_'+b.vid+'.jpg" alt="'+esc(b.label)+'" width="480" height="360" loading="lazy" decoding="async"><span class="ytplay" aria-hidden="true"></span><span class="ytlabel">\u25b6 '+esc(b.label)+'\uff08YouTube\u3067\u518d\u751f\uff09</span></a>';
   if(b.t==='cap') return '<p class="cap">'+esc(b.text)+'</p>';
   if(b.t==='p') return '<p>'+esc(b.text)+'</p>';
   if(b.t==='h2') return '<h2>'+esc(b.text)+'</h2>';
-  if(b.t==='figure') return '<figure class="bodyfig"><img src="'+b.img+'" alt="'+esc(b.alt)+'" loading="lazy"><figcaption>'+esc(b.cap)+'</figcaption></figure>';
+  if(b.t==='figure'){var dims=(b.w&&b.h)?' width="'+b.w+'" height="'+b.h+'"':'';return '<figure class="bodyfig"><img src="'+b.img+'" alt="'+esc(b.alt)+'"'+dims+' loading="lazy" decoding="async"><figcaption>'+esc(b.cap)+'</figcaption></figure>';}
   if(b.t==='pdf') return '<a class="pdflink" href="'+(b.url||'#')+'" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 2h8l4 4v16H6V2zm7 1.5V7h3.5L13 3.5zM8 12h8v1.5H8V12zm0 3.5h8V17H8v-1.5z"/></svg>'+esc(b.label)+'</a>';
   if(b.t==='link') return '<a class="pdflink" href="'+b.url+'" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg>'+esc(b.label)+'</a>';
   if(b.t==='sign') return '<p class="sign">'+b.text+'</p>';
@@ -189,6 +196,24 @@ function renderBlock(b){
     set('meta[property="og:image"]',img);
     set('meta[property="og:url"]',BASE+'news-article.html?id='+post.id);
     set('meta[name="description"]',post.title+'\uff5c\u30a6\u30a4\u30f3\u30e9\u30a4\u30d5 \u30d8\u30eb\u30d1\u30fc\u30b9\u30c6\u30fc\u30b7\u30e7\u30f3\u306e\u304a\u77e5\u3089\u305b\u30fb\u30d6\u30ed\u30b0\u8a18\u4e8b\u3067\u3059\u3002');
+    /* JSON-LD Article (\u52d5\u7684\u751f\u6210) */
+    var isoDate=post.date.replace(/\./g,'-')+'-01';
+    var bodyText=post.blocks.filter(function(b){return b.t==='p'||b.t==='h2';}).map(function(b){return b.text;}).join(' ').slice(0,300);
+    var ld={
+      '@context':'https://schema.org',
+      '@type':'Article',
+      'headline':post.title,
+      'description':bodyText,
+      'image':[img],
+      'datePublished':isoDate,
+      'dateModified':isoDate,
+      'author':{'@type':'Organization','name':'\u30a6\u30a4\u30f3\u30e9\u30a4\u30d5 \u30d8\u30eb\u30d1\u30fc\u30b9\u30c6\u30fc\u30b7\u30e7\u30f3','url':BASE},
+      'publisher':{'@type':'Organization','name':'\u30a6\u30a4\u30f3\u30e9\u30a4\u30d5 \u30d8\u30eb\u30d1\u30fc\u30b9\u30c6\u30fc\u30b7\u30e7\u30f3','logo':{'@type':'ImageObject','url':BASE+'assets/favicon.svg'}},
+      'mainEntityOfPage':{'@type':'WebPage','@id':BASE+'news-article.html?id='+post.id},
+      'articleSection':c[0],
+      'inLanguage':'ja'
+    };
+    var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify(ld);document.head.appendChild(s);
   })();
   var html='<div class="crumb"><a href="top.html">\u30db\u30fc\u30e0</a> \uff1e <a href="news.html">\u304a\u77e5\u3089\u305b\u30fb\u30d6\u30ed\u30b0</a> \uff1e '+esc(c[0])+'</div>'
     +'<div class="meta"><span class="c '+c[1]+'">'+esc(c[0])+'</span><span class="date">'+esc(post.date)+'</span></div>'

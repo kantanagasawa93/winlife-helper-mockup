@@ -113,9 +113,16 @@ footer a{color:var(--rose-deep);font-weight:700}
 @keyframes sidewaveflow{from{background-position:left 0}to{background-position:left 280px}}
 @media(prefers-reduced-motion:reduce){ .sidewave{animation:none} }
 
+/* === A11y === */
+:focus-visible{outline:3px solid var(--rose);outline-offset:2px;border-radius:4px}
+.navtoggle:focus-visible{outline-offset:3px}
+.skiplink{position:absolute;left:8px;top:-44px;background:var(--rose-deep);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;z-index:200;transition:top .2s}
+.skiplink:focus{top:8px}
+
 </style>
 </head>
 <body>
+<a href="#main" class="skiplink">本文へスキップ</a>
 <div class="mocknote">★ 情報公開ページ モックアップ（本番・ローカルWPに影響なし／PDFリンクは仮）　|　<a href="top.html">TOPへ</a>・<a href="recruit-lp.html">求人LP</a></div>
 
 <!-- slim header -->
@@ -141,7 +148,7 @@ footer a{color:var(--rose-deep);font-weight:700}
 </div>
 
 <!-- page title -->
-<section class="ptitle"><div class="wrap">
+<section id="main" class="ptitle" tabindex="-1"><div class="wrap">
   <div class="crumb"><a href="top.html">ホーム</a> ＞ 情報公開</div>
   <h1><span class="en">DISCLOSURE</span>情報公開</h1>
   <p>事業運営の透明性のため、各種規程・指針・報告を公開しています。各資料はPDFでご覧いただけます。</p>

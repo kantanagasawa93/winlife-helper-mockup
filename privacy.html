@@ -84,9 +84,16 @@ footer a{color:var(--rose-deep);font-weight:700}
 @keyframes sidewaveflow{from{background-position:left 0}to{background-position:left 280px}}
 @media(prefers-reduced-motion:reduce){ .sidewave{animation:none} }
 
+/* === A11y === */
+:focus-visible{outline:3px solid var(--rose);outline-offset:2px;border-radius:4px}
+.navtoggle:focus-visible{outline-offset:3px}
+.skiplink{position:absolute;left:8px;top:-44px;background:var(--rose-deep);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;z-index:200;transition:top .2s}
+.skiplink:focus{top:8px}
+
 </style>
 </head>
 <body>
+<a href="#main" class="skiplink">本文へスキップ</a>
 <div class="mocknote">★ プライバシーポリシー モックアップ（文面は雛形・要法務確認）　|　<a href="top.html">TOP</a></div>
 <div class="nav" id="nav">
   <div class="navbar"><div class="row">
@@ -109,7 +116,7 @@ footer a{color:var(--rose-deep);font-weight:700}
   </ul>
 </div>
 
-<section class="ptitle"><div class="wrap">
+<section id="main" class="ptitle" tabindex="-1"><div class="wrap">
   <div class="crumb"><a href="top.html">ホーム</a> ＞ プライバシーポリシー</div>
   <h1><span class="en">PRIVACY POLICY</span>プライバシーポリシー</h1>
 </div></section>

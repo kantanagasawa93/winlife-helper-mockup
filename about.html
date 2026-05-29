@@ -108,9 +108,16 @@ footer a{color:var(--rose-deep);font-weight:700}
 @keyframes sidewaveflow{from{background-position:left 0}to{background-position:left 280px}}
 @media(prefers-reduced-motion:reduce){ .sidewave{animation:none} }
 
+/* === A11y === */
+:focus-visible{outline:3px solid var(--rose);outline-offset:2px;border-radius:4px}
+.navtoggle:focus-visible{outline-offset:3px}
+.skiplink{position:absolute;left:8px;top:-44px;background:var(--rose-deep);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;z-index:200;transition:top .2s}
+.skiplink:focus{top:8px}
+
 </style>
 </head>
 <body>
+<a href="#story" class="skiplink">本文へスキップ</a>
 <div class="mocknote">★ 私たちについて モックアップ　|　<a href="top.html">TOP</a>・<a href="news.html">活動報告</a></div>
 <div class="nav" id="nav">
   <div class="navbar"><div class="row">
@@ -170,7 +177,7 @@ footer a{color:var(--rose-deep);font-weight:700}
       <p>今後とも、何卒よろしくお願いいたします。</p>
       <div class="sign">ウインライフ合同会社　代表社員　西濱 昌典</div>
     </div>
-    <div class="ph hasimg"><img src="assets/img/p16810647.jpg" alt="ウインライフ"></div>
+    <div class="ph hasimg"><img src="assets/img/p16810647.jpg" alt="代表 西濱昌典" width="1400" height="2100" loading="lazy" decoding="async"></div>
   </div>
 </div></section>
 

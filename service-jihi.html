@@ -103,9 +103,16 @@ footer a{color:var(--rose-deep);font-weight:700}
 @keyframes sidewaveflow{from{background-position:left 0}to{background-position:left 280px}}
 @media(prefers-reduced-motion:reduce){ .sidewave{animation:none} }
 
+/* === A11y === */
+:focus-visible{outline:3px solid var(--rose);outline-offset:2px;border-radius:4px}
+.navtoggle:focus-visible{outline-offset:3px}
+.skiplink{position:absolute;left:8px;top:-44px;background:var(--rose-deep);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;z-index:200;transition:top .2s}
+.skiplink:focus{top:8px}
+
 </style>
 </head>
 <body>
+<a href="#main" class="skiplink">本文へスキップ</a>
 <div class="mocknote">★ サービス個別ページ モックアップ　|　<a href="top.html">TOP</a>・<a href="service-homon.html">訪問介護</a>・<a href="service-kyotaku.html">居宅・重度</a></div>
 <div class="nav" id="nav">
   <div class="navbar"><div class="row">
@@ -128,7 +135,7 @@ footer a{color:var(--rose-deep);font-weight:700}
   </ul>
 </div>
 
-<section class="shero"><div class="wrap">
+<section id="main" class="shero" tabindex="-1"><div class="wrap">
   <div class="crumb"><a href="top.html">ホーム</a> ＞ サービス ＞ 自費サービス</div>
   <h1><span class="en">PRIVATE-PAY CARE</span>自費サービス</h1>
   <p>介護保険・障がい福祉の「枠の外」にも、柔軟にお応えします。保険対象外の家事・付き添い・見守りなど、あったらいいなを叶えるサービスです。</p>

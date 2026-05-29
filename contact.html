@@ -114,9 +114,16 @@ footer a{color:var(--rose-deep);font-weight:700}
 @keyframes sidewaveflow{from{background-position:left 0}to{background-position:left 280px}}
 @media(prefers-reduced-motion:reduce){ .sidewave{animation:none} }
 
+/* === A11y === */
+:focus-visible{outline:3px solid var(--rose);outline-offset:2px;border-radius:4px}
+.navtoggle:focus-visible{outline-offset:3px}
+.skiplink{position:absolute;left:8px;top:-44px;background:var(--rose-deep);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;z-index:200;transition:top .2s}
+.skiplink:focus{top:8px}
+
 </style>
 </head>
 <body>
+<a href="#main" class="skiplink">本文へスキップ</a>
 <div class="mocknote">★ お問い合わせページ モックアップ（本番・ローカルWPに影響なし／送信は仮）　|　<a href="top.html">TOP</a>・<a href="recruit-lp.html">求人LP</a>・<a href="info-disclosure.html">情報公開</a></div>
 
 <div class="nav" id="nav">
@@ -140,7 +147,7 @@ footer a{color:var(--rose-deep);font-weight:700}
   </ul>
 </div>
 
-<section class="ptitle"><div class="wrap">
+<section id="main" class="ptitle" tabindex="-1"><div class="wrap">
   <div class="crumb"><a href="top.html">ホーム</a> ＞ お問い合わせ</div>
   <h1><span class="en">CONTACT</span>お問い合わせ</h1>
   <p>介護のご相談、採用へのご応募、その他のお問い合わせはこちらから。お電話でもお気軽にどうぞ。</p>
@@ -153,18 +160,18 @@ footer a{color:var(--rose-deep);font-weight:700}
     <h2>お問い合わせフォーム</h2>
     <p class="note">通常2〜3営業日以内にご返信します。お急ぎの場合はお電話ください。</p>
     <form onsubmit="return false">
-      <div class="field">
-        <label>お問い合わせ種別<span class="req">必須</span></label>
-        <div class="radios">
-          <label><input type="radio" name="type" checked> 介護のご相談</label>
-          <label><input type="radio" name="type"> 採用について</label>
-          <label><input type="radio" name="type"> その他</label>
+      <fieldset class="field" style="border:0;padding:0;margin:0">
+        <legend style="display:block;font-size:14px;font-weight:700;margin-bottom:8px">お問い合わせ種別<span class="req">必須</span></legend>
+        <div class="radios" role="radiogroup">
+          <label><input type="radio" name="type" value="kaigo" checked> 介護のご相談</label>
+          <label><input type="radio" name="type" value="saiyo"> 採用について</label>
+          <label><input type="radio" name="type" value="other"> その他</label>
         </div>
-      </div>
-      <div class="field"><label>お名前<span class="req">必須</span></label><input type="text" placeholder="山田 花子"></div>
-      <div class="field"><label>電話番号<span class="req">必須</span></label><input type="tel" placeholder="090-0000-0000"></div>
-      <div class="field"><label>メールアドレス</label><input type="email" placeholder="example@email.com"></div>
-      <div class="field"><label>お問い合わせ内容<span class="req">必須</span></label><textarea placeholder="ご相談内容をご記入ください"></textarea></div>
+      </fieldset>
+      <div class="field"><label for="cf-name">お名前<span class="req">必須</span></label><input id="cf-name" name="name" type="text" autocomplete="name" required placeholder="山田 花子"></div>
+      <div class="field"><label for="cf-tel">電話番号<span class="req">必須</span></label><input id="cf-tel" name="tel" type="tel" autocomplete="tel" required placeholder="090-0000-0000"></div>
+      <div class="field"><label for="cf-email">メールアドレス</label><input id="cf-email" name="email" type="email" autocomplete="email" placeholder="example@email.com"></div>
+      <div class="field"><label for="cf-msg">お問い合わせ内容<span class="req">必須</span></label><textarea id="cf-msg" name="message" required placeholder="ご相談内容をご記入ください"></textarea></div>
       <button class="submit" type="submit">この内容で送信する</button>
       <p class="privacy">送信により<a href="privacy.html">プライバシーポリシー</a>に同意したものとみなします。</p>
     </form>
