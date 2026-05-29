@@ -120,7 +120,18 @@ function renderBlock(b){
   if(b.t==='cap') return '<p class="cap">'+esc(b.text)+'</p>';
   if(b.t==='p') return '<p>'+esc(b.text)+'</p>';
   if(b.t==='h2') return '<h2>'+esc(b.text)+'</h2>';
-  if(b.t==='figure'){var dims=(b.w&&b.h)?' width="'+b.w+'" height="'+b.h+'"':'';return '<figure class="bodyfig"><img src="'+b.img+'" alt="'+esc(b.alt)+'"'+dims+' loading="lazy" decoding="async"><figcaption>'+esc(b.cap)+'</figcaption></figure>';}
+  if(b.t==='figure'){
+    var dims=(b.w&&b.h)?' width="'+b.w+'" height="'+b.h+'"':'';
+    // AVIF/WebP 自動切替: 拡張子を差し替えた srcset を出力（実ファイルがなければブラウザが次にフォールバックする）
+    var base=b.img.replace(/\.(jpg|jpeg|png)$/i,'');
+    return '<figure class="bodyfig">'+
+      '<picture>'+
+      '<source srcset="'+base+'.avif" type="image/avif">'+
+      '<source srcset="'+base+'.webp" type="image/webp">'+
+      '<img src="'+b.img+'" alt="'+esc(b.alt)+'"'+dims+' loading="lazy" decoding="async">'+
+      '</picture>'+
+      '<figcaption>'+esc(b.cap)+'</figcaption></figure>';
+  }
   if(b.t==='pdf') return '<a class="pdflink" href="'+(b.url||'#')+'" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 2h8l4 4v16H6V2zm7 1.5V7h3.5L13 3.5zM8 12h8v1.5H8V12zm0 3.5h8V17H8v-1.5z"/></svg>'+esc(b.label)+'</a>';
   if(b.t==='link') return '<a class="pdflink" href="'+b.url+'" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H5v12h12v-6h2v8H3V5h2z"/></svg>'+esc(b.label)+'</a>';
   if(b.t==='sign') return '<p class="sign">'+b.text+'</p>';

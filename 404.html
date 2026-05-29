@@ -5,43 +5,152 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ページが見つかりません（404）｜ウインライフ ヘルパーステーション</title>
 <meta name="robots" content="noindex">
+<meta name="description" content="お探しのページは見つかりませんでした。ウインライフ ヘルパーステーション（福岡市東区の訪問介護）のトップ・サービス案内・お問い合わせをご利用ください。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ウインライフ ヘルパーステーション">
+<meta property="og:title" content="ページが見つかりません｜ウインライフ ヘルパーステーション">
+<meta property="og:description" content="お探しのページは見つかりませんでした。トップやサービス案内からお進みください。">
+<meta property="og:url" content="https://kantanagasawa93.github.io/winlife-helper-mockup/404.html">
+<meta property="og:image" content="https://kantanagasawa93.github.io/winlife-helper-mockup/assets/ogp/top.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/common.css">
+<script src="assets/analytics.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--rose:#D6587E;--rose-deep:#B23E63;--greige:#7A6E66;--base:#FBF7F4;--tint:#F6ECEF;--ink:#2E2A28;}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--base);min-height:100vh;display:flex;flex-direction:column}
-.nav{background:#fbf7f4;border-bottom:1px solid #eedde2}
-.nav .row{max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,56px);height:64px;display:flex;align-items:center;justify-content:center}
-.logo{font-weight:900;color:var(--rose-deep);font-size:clamp(15px,2.3vw,21px);text-decoration:none;letter-spacing:.12em;white-space:nowrap}
-main{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 24px;position:relative;overflow:hidden}
-.code{font-size:clamp(72px,16vw,140px);font-weight:900;color:var(--tint);line-height:1;letter-spacing:.04em}
-.inner{position:relative;z-index:1;max-width:560px}
-h1{font-size:clamp(20px,4vw,26px);font-weight:900;margin:6px 0 14px}
-p{color:var(--greige);margin-bottom:28px;line-height:1.9}
-.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:14px 24px;font-size:16px;font-weight:700;text-decoration:none;min-height:52px}
+.wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+body{min-height:100vh;display:flex;flex-direction:column}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 0;position:relative}
+
+/* === ヒーロー（大きな404＋メッセージ） === */
+.hero404{text-align:center;width:100%;position:relative;z-index:1}
+.code{font-family:Georgia,"Times New Roman",serif;font-size:clamp(120px,22vw,220px);font-weight:900;line-height:1;letter-spacing:.02em;color:var(--rose-deep);opacity:.18;margin-bottom:6px;user-select:none}
+.code em{font-style:normal;color:var(--rose)}
+.label{display:inline-block;font-size:13px;font-weight:900;color:var(--rose);letter-spacing:.14em;background:var(--tint);padding:6px 14px;border-radius:999px;margin-bottom:14px;text-transform:uppercase}
+h1{font-size:clamp(26px,4.5vw,36px);font-weight:900;color:var(--ink);line-height:1.4;margin-bottom:14px}
+.lead{color:var(--greige);margin-bottom:32px;line-height:1.85;font-size:15px;max-width:540px;margin-left:auto;margin-right:auto}
+
+/* === リンクカード（行先案内） === */
+.linkgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:720px;margin:0 auto 36px}
+.lcard{background:#fff;border:1.5px solid #eedde2;border-radius:14px;padding:18px 16px;text-decoration:none;color:var(--ink);text-align:left;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.lcard:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(178,62,99,.12);border-color:var(--rose)}
+.lcard .ic{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;background:var(--tint);color:var(--rose-deep);border-radius:10px;margin-bottom:8px}
+.lcard .ic svg{width:20px;height:20px}
+.lcard .lname{font-weight:900;color:var(--rose-deep);font-size:15px;margin-bottom:2px}
+.lcard .ldesc{font-size:12px;color:var(--greige);line-height:1.5}
+@media(max-width:640px){ .linkgrid{grid-template-columns:1fr} }
+
+/* === CTAボタン === */
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:14px 24px;font-size:16px;font-weight:700;text-decoration:none;border:none;cursor:pointer;min-height:52px;transition:transform .15s ease,filter .15s ease}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
 .btn-rose{background:var(--rose-deep);color:#fff}
 .btn-ghost{background:#fff;color:var(--rose-deep);border:2px solid var(--rose)}
-footer{background:#fff;border-top:1px solid #f0e3e7;color:var(--greige);padding:24px;font-size:13px;text-align:center}
-footer a{color:var(--rose-deep)}
+
+/* === 装飾：ピンクの装飾円 === */
+.deco{position:absolute;background:var(--tint);border-radius:50%;pointer-events:none;z-index:0;opacity:.55}
+.deco.d1{width:280px;height:280px;left:-100px;top:5%}
+.deco.d2{width:200px;height:200px;right:-60px;top:30%}
+.deco.d3{width:140px;height:140px;left:20%;bottom:5%}
+@media(max-width:640px){ .deco{display:none} }
 </style>
 </head>
 <body>
-<div class="nav"><div class="row"><a class="logo" href="top.html">ウインライフ ヘルパーステーション</a></div></div>
-<main>
-  <div class="inner">
-    <div class="code">404</div>
-    <h1>ページが見つかりませんでした</h1>
-    <p>お探しのページは移動・削除されたか、URLが正しくない可能性があります。<br>お手数ですが、下記からお進みください。</p>
-    <div class="btns">
-      <a class="btn btn-rose" href="top.html">トップへ戻る</a>
-      <a class="btn btn-ghost" href="news.html">お知らせ・ブログ</a>
-      <a class="btn btn-ghost" href="contact.html">お問い合わせ</a>
+<a href="#main" class="skiplink">本文へスキップ</a>
+<div class="mocknote">★ 404ページ モックアップ　|　<a href="top.html">TOPへ戻る</a></div>
+
+<div class="nav" id="nav">
+  <div class="navbar"><div class="row">
+    <span class="navspacer"></span>
+    <a class="logo" href="top.html">ウインライフ ヘルパーステーション</a>
+    <div class="navtop-right">
+      <a class="htel" href="tel:0924109285"><svg class="ico-tel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg><span>092-410-9285</span></a>
+      <button class="navtoggle" id="navtoggle" type="button" aria-label="メニュー">☰</button>
+    </div>
+  </div></div>
+  <ul class="menu">
+    <li><a href="top.html">トップ</a></li>
+    <li><a href="about.html">私たちについて</a></li>
+    <li><a href="service-homon.html">訪問介護</a></li>
+    <li><a href="service-kyotaku.html">居宅介護・重度訪問介護</a></li>
+    <li><a href="service-jihi.html">自費サービス</a></li>
+    <li><a class="hot" href="recruit-lp.html">採用情報</a></li>
+    <li><a href="news.html">お知らせ・ブログ</a></li>
+    <li><a href="info-disclosure.html">情報公開</a></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+    <li class="telitem"><a href="tel:0924109285"><svg class="ico-tel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg> 092-410-9285</a></li>
+  </ul>
+</div>
+
+<main id="main" role="main">
+  <div class="deco d1"></div>
+  <div class="deco d2"></div>
+  <div class="deco d3"></div>
+
+  <div class="wrap">
+    <div class="hero404">
+      <div class="code">4<em>0</em>4</div>
+      <span class="label">Page Not Found</span>
+      <h1>お探しのページが<br>見つかりませんでした</h1>
+      <p class="lead">移動・削除された可能性があります。お手数ですが、下記からお進みください。お電話でのご相談も承っております。</p>
+
+      <div class="linkgrid">
+        <a class="lcard" href="top.html">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 8h-3v9h-4v-6h-4v6H6v-9H3z"/></svg></span>
+          <div class="lname">トップ</div>
+          <div class="ldesc">ウインライフ全体のご案内</div>
+        </a>
+        <a class="lcard" href="service-homon.html">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z M4 16l1 3 3 1-3 1-1 3-1-3-3-1 3-1z M19 14l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg></span>
+          <div class="lname">サービス案内</div>
+          <div class="ldesc">訪問介護・居宅・重度・自費</div>
+        </a>
+        <a class="lcard" href="recruit-lp.html">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10-2h4v2h-4V4zm10 15H4V8h16v11z"/></svg></span>
+          <div class="lname">採用情報</div>
+          <div class="ldesc">時給1,430〜2,200円・週1日〜OK</div>
+        </a>
+        <a class="lcard" href="news.html">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 14H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></span>
+          <div class="lname">お知らせ・ブログ</div>
+          <div class="ldesc">活動報告・決算・立ち上げ日記</div>
+        </a>
+        <a class="lcard" href="contact.html">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+          <div class="lname">お問い合わせ</div>
+          <div class="ldesc">介護のご相談・採用について</div>
+        </a>
+        <a class="lcard" href="info-disclosure.html">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg></span>
+          <div class="lname">情報公開</div>
+          <div class="ldesc">運営規程・各種指針・決算報告</div>
+        </a>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-rose" href="top.html">トップへ戻る</a>
+        <a class="btn btn-ghost" href="tel:0924109285">📞 092-410-9285 でお電話</a>
+      </div>
     </div>
   </div>
 </main>
-<footer>ウインライフ ヘルパーステーション／TEL <a href="tel:0924109285">092-410-9285</a></footer>
+
+<footer>
+  <strong>ウインライフ ヘルパーステーション</strong>（ウインライフ合同会社）<br>
+  〒813-0002 福岡市東区下原4-5-8-102／TEL <a href="tel:0924109285">092-410-9285</a><br>
+  <span style="opacity:.6">訪問介護・居宅介護・重度訪問介護・自費サービス｜法人番号 2290003012103</span>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'),tg=document.getElementById('navtoggle');
+  if(!nav||!tg)return;
+  tg.addEventListener('click',function(){var o=nav.classList.toggle('open');tg.textContent=o?'✕':'☰';});
+  nav.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');tg.textContent='☰';});});
+})();
+</script>
 </body>
 </html>

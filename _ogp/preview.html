@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OGP プレビュー — ウインライフ ヘルパーステーション</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#D6587E;--rose-deep:#B23E63;--base:#FBF7F4;--tint:#F6ECEF;--ink:#2E2A28;--greige:#7A6E66}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Noto Sans JP",sans-serif;background:#F0F2F5;color:var(--ink);line-height:1.6;padding:24px;font-size:14px}
+header{max-width:1200px;margin:0 auto 24px;background:#fff;border-radius:14px;padding:22px 28px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+header h1{color:var(--rose-deep);font-size:22px;margin-bottom:6px}
+header p{color:var(--greige);margin-bottom:14px;font-size:13px}
+.platform-switcher{display:flex;gap:8px;flex-wrap:wrap}
+.platform-switcher a{display:inline-block;padding:8px 16px;border-radius:8px;background:var(--tint);color:var(--rose-deep);text-decoration:none;font-weight:700;font-size:13px}
+.platform-switcher a.active{background:var(--rose-deep);color:#fff}
+
+.grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(560px,1fr));gap:20px}
+
+/* === X / Twitter Card === */
+.card-x{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #cfd9de}
+.card-x .img-wrap{aspect-ratio:1200/628;overflow:hidden;background:#000;border-bottom:1px solid #cfd9de}
+.card-x .img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.card-x .body{padding:12px 14px;background:#fff}
+.card-x .domain{color:#536471;font-size:13px;text-transform:none;margin-bottom:2px}
+.card-x .title{color:#0f1419;font-size:15px;font-weight:400;line-height:1.3;margin-bottom:2px}
+.card-x .desc{color:#536471;font-size:13px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* === Facebook === */
+.card-fb{background:#fff;border-radius:8px;overflow:hidden;border:1px solid #dadde1}
+.card-fb .img-wrap{aspect-ratio:1.91/1;overflow:hidden;background:#f0f2f5;border-bottom:1px solid #dadde1}
+.card-fb .img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.card-fb .body{padding:10px 12px;background:#f2f3f5}
+.card-fb .domain{color:#65676b;font-size:12px;text-transform:uppercase;margin-bottom:2px}
+.card-fb .title{color:#1c1e21;font-size:16px;font-weight:600;line-height:1.25;margin-bottom:2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-fb .desc{color:#65676b;font-size:14px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* === LINE === */
+.card-line{background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0;display:flex;flex-direction:column}
+.card-line .img-wrap{aspect-ratio:1200/630;overflow:hidden;background:#e0e0e0}
+.card-line .img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.card-line .body{padding:14px;background:#fff}
+.card-line .title{color:#000;font-size:15px;font-weight:700;line-height:1.4;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-line .desc{color:#666;font-size:13px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:6px}
+.card-line .domain{color:#999;font-size:11px}
+
+/* === Common header / meta info === */
+.card-meta{margin-top:6px;padding:8px 12px;background:#fafafa;border-radius:8px;font-size:11px;color:#666;font-family:monospace;line-height:1.4}
+.card-meta a{color:var(--rose-deep)}
+.card-wrap{background:#fff;border-radius:12px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card-wrap h2{font-size:13px;font-weight:700;color:var(--rose-deep);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em}
+.notice{max-width:1200px;margin:24px auto 0;background:#fff8e1;border-left:4px solid #ffd54f;padding:16px 20px;border-radius:8px;font-size:13px;color:#664a00}
+.notice strong{display:block;margin-bottom:6px;color:#664a00}
+
+@media(max-width:640px){
+  .grid{grid-template-columns:1fr}
+  body{padding:14px}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>OGP プレビュー — 11ページ一覧</h1>
+  <p>各SNS（X / Facebook / LINE）でシェアされた時にどう見えるかを擬似表示。実環境テストは <code>docs/ogp-preview-test.md</code> 参照。</p>
+  <div class="platform-switcher">
+    <a href="?platform=all" data-p="all">すべて</a>
+    <a href="?platform=x" data-p="x">X (Twitter)</a>
+    <a href="?platform=fb" data-p="fb">Facebook</a>
+    <a href="?platform=line" data-p="line">LINE</a>
+  </div>
+</header>
+
+<div class="grid" id="grid"></div>
+
+<div class="notice">
+  <strong>⚠️ 注意</strong>
+  これはローカルでHTMLメタタグから生成した擬似プレビュー。実際の見え方はSNS各社のレンダラに依存します。<br>
+  公式デバッガでの確認手順は <code>docs/ogp-preview-test.md</code> をご覧ください。
+</div>
+
+<script>
+const BASE = 'https://kantanagasawa93.github.io/winlife-helper-mockup/';
+
+const PAGES = [
+  {url: 'top.html',                       label: 'TOP'},
+  {url: 'about.html',                     label: '私たちについて'},
+  {url: 'service-homon.html',             label: '訪問介護'},
+  {url: 'service-kyotaku.html',           label: '居宅・重度訪問介護'},
+  {url: 'service-jihi.html',              label: '自費サービス'},
+  {url: 'recruit-lp.html',                label: '求人LP ★'},
+  {url: 'news.html',                      label: 'お知らせ一覧'},
+  {url: 'news-article.html?id=tenomori',  label: '記事個別（テノ森）'},
+  {url: 'info-disclosure.html',           label: '情報公開'},
+  {url: 'contact.html',                   label: 'お問い合わせ'},
+  {url: 'privacy.html',                   label: 'プライバシー'},
+];
+
+const platform = (new URLSearchParams(location.search).get('platform')) || 'all';
+
+// switcherのactive表示
+for (const a of document.querySelectorAll('.platform-switcher a')) {
+  if (a.dataset.p === platform) a.classList.add('active');
+}
+
+async function fetchOGP(url) {
+  // CORS無視できないので、メタタグはHTMLを文字列でfetchして正規表現で抜く
+  try {
+    const html = await fetch(url).then(r => r.text());
+    const get = (prop) => {
+      const m = html.match(new RegExp(`<meta\\s+(?:property|name)="${prop}"\\s+content="([^"]+)"`, 'i'));
+      return m ? m[1] : '';
+    };
+    return {
+      title: get('og:title'),
+      desc: get('og:description'),
+      img: get('og:image'),
+      url: get('og:url'),
+      site: get('og:site_name'),
+    };
+  } catch(e) {
+    return null;
+  }
+}
+
+function makeCardX(d) {
+  return `<div class="card-x">
+    <div class="img-wrap"><img src="${d.img}" alt=""></div>
+    <div class="body">
+      <div class="domain">kantanagasawa93.github.io</div>
+      <div class="title">${escapeHTML(d.title)}</div>
+    </div>
+  </div>`;
+}
+
+function makeCardFB(d) {
+  return `<div class="card-fb">
+    <div class="img-wrap"><img src="${d.img}" alt=""></div>
+    <div class="body">
+      <div class="domain">KANTANAGASAWA93.GITHUB.IO</div>
+      <div class="title">${escapeHTML(d.title)}</div>
+      <div class="desc">${escapeHTML(d.desc)}</div>
+    </div>
+  </div>`;
+}
+
+function makeCardLINE(d) {
+  return `<div class="card-line">
+    <div class="img-wrap"><img src="${d.img}" alt=""></div>
+    <div class="body">
+      <div class="title">${escapeHTML(d.title)}</div>
+      <div class="desc">${escapeHTML(d.desc)}</div>
+      <div class="domain">kantanagasawa93.github.io</div>
+    </div>
+  </div>`;
+}
+
+function escapeHTML(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function main() {
+  const grid = document.getElementById('grid');
+  // 親ディレクトリ basis でフェッチ（mockupルート直下にあるので ../）
+  for (const p of PAGES) {
+    const localURL = '../' + p.url;
+    const data = await fetchOGP(localURL);
+    if (!data) {
+      grid.insertAdjacentHTML('beforeend', `
+        <div class="card-wrap"><h2>${p.label}</h2><p style="color:#c00">取得失敗</p></div>`);
+      continue;
+    }
+    // 画像URLが絶対なら使う、相対なら相対のまま（プレビュー用）
+    if (data.img && !data.img.startsWith('http')) {
+      data.img = '../' + data.img;
+    }
+    let cards = '';
+    if (platform === 'all' || platform === 'x')  cards += `<div style="margin-bottom:12px"><div style="font-size:11px;color:#1da1f2;font-weight:700;margin-bottom:4px;text-transform:uppercase">X / Twitter</div>${makeCardX(data)}</div>`;
+    if (platform === 'all' || platform === 'fb') cards += `<div style="margin-bottom:12px"><div style="font-size:11px;color:#1877f2;font-weight:700;margin-bottom:4px;text-transform:uppercase">Facebook</div>${makeCardFB(data)}</div>`;
+    if (platform === 'all' || platform === 'line') cards += `<div style="margin-bottom:12px"><div style="font-size:11px;color:#06c755;font-weight:700;margin-bottom:4px;text-transform:uppercase">LINE</div>${makeCardLINE(data)}</div>`;
+
+    grid.insertAdjacentHTML('beforeend', `
+      <div class="card-wrap">
+        <h2>${escapeHTML(p.label)}</h2>
+        ${cards}
+        <div class="card-meta">
+          <strong>URL</strong>: <a href="${BASE + p.url}" target="_blank">${BASE + p.url}</a><br>
+          <strong>og:image</strong>: ${escapeHTML((data.img||'').replace('../','/'))}
+        </div>
+      </div>`);
+  }
+}
+
+main();
+</script>
+</body>
+</html>

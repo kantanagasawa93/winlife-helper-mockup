@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>公開モック確認シート | ウインライフ ヘルパーステーション</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+@page{size:A4;margin:14mm 12mm}
+:root{--rose:#D6587E;--rose-deep:#B23E63;--ink:#2E2A28;--greige:#7A6E66;--tint:#F6ECEF;--base:#FBF7F4}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);line-height:1.55;font-size:10.5pt;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+/* === ヘッダー === */
+.head{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid var(--rose-deep);padding-bottom:10px;margin-bottom:14px}
+.head .brand{display:flex;align-items:center;gap:8px}
+.head .brand svg{width:32px;height:32px;color:var(--rose-deep)}
+.head .brand .name{font-weight:900;font-size:14pt;color:var(--rose-deep);letter-spacing:.04em}
+.head .brand .sub{font-size:9pt;color:var(--greige);font-weight:700;margin-top:2px}
+.head .meta{text-align:right;font-size:9pt;color:var(--greige)}
+.head .meta .date{font-weight:700;color:var(--ink);font-size:10pt}
+
+/* === タイトル === */
+h1{font-size:18pt;font-weight:900;color:var(--rose-deep);margin-bottom:6px;line-height:1.3}
+.lead{font-size:10.5pt;color:#444;margin-bottom:12px;line-height:1.6}
+
+/* === URL + QR === */
+.url-block{background:var(--tint);border-radius:10px;padding:12px 14px;margin-bottom:14px;display:flex;align-items:center;gap:14px}
+.url-block .qr{width:90px;height:90px;background:#fff;border-radius:8px;padding:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.url-block .qr img{width:100%;height:100%;display:block}
+.url-block .info{flex:1}
+.url-block .label{font-size:9pt;color:var(--rose-deep);font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+.url-block .url{font-family:Menlo,Consolas,monospace;font-size:9.5pt;color:var(--ink);word-break:break-all;font-weight:700;line-height:1.4;margin-bottom:4px}
+.url-block .hint{font-size:9pt;color:var(--greige)}
+
+/* === 確認方法ボックス === */
+.howto{background:#fff;border:1.5px solid var(--rose);border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:10pt}
+.howto h2{font-size:11pt;font-weight:900;color:var(--rose-deep);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.howto h2:before{content:"";display:inline-block;width:14px;height:14px;background:var(--rose-deep);border-radius:50%}
+.howto ol{padding-left:24px;line-height:1.7}
+.howto ol li{margin-bottom:2px}
+.howto ol li b{color:var(--rose-deep)}
+
+/* === ページリスト === */
+.section-title{font-size:11pt;font-weight:900;color:var(--rose-deep);margin:14px 0 8px;padding-left:8px;border-left:4px solid var(--rose);line-height:1.2}
+
+.pages{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px}
+.pageitem{background:#fafafa;border-radius:6px;padding:8px 10px;font-size:9.5pt;break-inside:avoid}
+.pageitem .name{font-weight:900;color:var(--ink);margin-bottom:2px;font-size:10pt;display:flex;align-items:center;justify-content:space-between}
+.pageitem .name .tag{display:inline-block;background:var(--rose-deep);color:#fff;font-size:8pt;font-weight:700;padding:1px 6px;border-radius:6px;letter-spacing:.04em}
+.pageitem .pts{color:#555;font-size:9pt;line-height:1.45}
+.pageitem .pts b{color:var(--rose-deep)}
+
+/* === フィードバックボックス === */
+.fb-box{background:var(--rose-deep);color:#fff;border-radius:10px;padding:12px 16px;margin-top:14px;font-size:10pt;line-height:1.6}
+.fb-box h3{font-size:11pt;font-weight:900;margin-bottom:6px}
+.fb-box p{margin-bottom:4px}
+.fb-box .channels{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
+.fb-box .channels span{background:rgba(255,255,255,.18);padding:3px 9px;border-radius:6px;font-size:9pt;font-weight:700}
+
+/* === フッター === */
+.foot{margin-top:16px;padding-top:8px;border-top:1px solid #eee;font-size:8pt;color:var(--greige);display:flex;justify-content:space-between;align-items:center}
+.foot .made{font-weight:700;color:var(--rose-deep)}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<div class="head">
+  <div class="brand">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-1.2 1.6-1.2 3.4 0 5 1.2-1.6 1.2-3.4 0-5zm-1 5.5L4.5 20l3-1 1.2 2.6L13 11.5 11 7.5zm2 0L11 11.5l4.3 10.1L16.5 19l3 1L13 7.5z"/></svg>
+    <div>
+      <div class="name">ウインライフ ヘルパーステーション</div>
+      <div class="sub">福岡市東区の訪問介護</div>
+    </div>
+  </div>
+  <div class="meta">
+    <div class="date">2026年5月29日</div>
+    <div>新サイト モックアップ</div>
+    <div>確認シート v1.0</div>
+  </div>
+</div>
+
+<!-- タイトル -->
+<h1>公開モックの確認をお願いします</h1>
+<p class="lead">新しいウェブサイトの完成見本ができました。本番投入の前にデザイン・コピー・写真のチェックをお願いします。スマホでの確認を推奨します（実際のアクセスもスマホからが多数のため）。</p>
+
+<!-- URL + QR -->
+<div class="url-block">
+  <div class="qr">
+    <img id="qr" alt="QRコード" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=4&data=https%3A%2F%2Fkantanagasawa93.github.io%2Fwinlife-helper-mockup%2Ftop.html">
+  </div>
+  <div class="info">
+    <div class="label">公開URL（スマホでQRを読むのが速いです）</div>
+    <div class="url">https://kantanagasawa93.github.io/winlife-helper-mockup/top.html</div>
+    <div class="hint">⚠️ 本番サイト（winlifehelperstation.com）ではありません。**確認専用の公開モック**です。インターネット上の誰でも見られる状態ですが、検索エンジンには登録されていません。</div>
+  </div>
+</div>
+
+<!-- 確認方法 -->
+<div class="howto">
+  <h2>確認のしかた（3ステップ）</h2>
+  <ol>
+    <li><b>QRを読む or URLを開く</b> → TOPページが表示される（動画ヒーロー、自動再生）</li>
+    <li><b>右上のメニューアイコン（≡）</b>からハンバーガーメニューを開く → すべてのページにアクセスできる</li>
+    <li><b>下の11ページ</b>を順にチェック → 「気になる」「変えたい」点を最後の枠に書く（LINE/メールで送ってください）</li>
+  </ol>
+</div>
+
+<!-- 11ページの確認観点 -->
+<div class="section-title">確認していただきたい11ページ（各1分目安）</div>
+
+<div class="pages">
+
+  <div class="pageitem">
+    <div class="name">① TOP <span class="tag">最重要</span></div>
+    <div class="pts">
+      ・ヒーロー動画（仮素材）の <b>差し替えイメージ</b>を頭に浮かべて見る<br>
+      ・キャッチコピー「大切な人と過ごす時間を、あきらめないで。」の<b>言い回し</b><br>
+      ・3つのCTAボタンの<b>順番・色味</b>
+    </div>
+  </div>
+
+  <div class="pageitem">
+    <div class="name">② 私たちについて</div>
+    <div class="pts">
+      ・<b>設立ストーリー</b>のトーン（追悼・継承の文体でOKか）<br>
+      ・<b>会社概要</b>表に間違いがないか<br>
+      ・タブ（ごあいさつ／設立ストーリー／会社概要／社会貢献活動）の遷移
+    </div>
+  </div>
+
+  <div class="pageitem">
+    <div class="name">③ 訪問介護（介護保険）</div>
+    <div class="pts">
+      ・<b>サービス内容</b>の説明文に過不足がないか<br>
+      ・<b>料金イメージ</b>の書き方（介護保険の自己負担割合）<br>
+      ・関連リンクが適切か
+    </div>
+  </div>
+
+  <div class="pageitem">
+    <div class="name">④ 居宅介護・重度訪問介護</div>
+    <div class="pts">
+      ・障がい福祉サービスの<b>説明文</b><br>
+      ・対象となる方の<b>条件</b>の書き方<br>
+      ・「居宅」と「重度」の差別化が伝わるか
+    </div>
+  </div>
+
+  <div class="pageitem">
+    <div class="name">⑤ 自費サービス</div>
+    <div class="pts">
+      ・<b>1時間3,500円</b>の表記OKか（変更要なら新料金）<br>
+      ・対応できる/できないサービスの境界<br>
+      ・予約・キャンセル規定の<b>記載要否</b>
+    </div>
+  </div>
+
+  <div class="pageitem">
+    <div class="name">⑥ 求人LP <span class="tag">最重要</span></div>
+    <div class="pts">
+      ・<b>時給 1,430〜2,200円</b>の数字が正確か<br>
+      ・ <b>「働く仲間の声」</b>を本物のスタッフ取材で差し替える<br>
+      ・福利厚生（乳がん検診全額補助等）の<b>表現と文言</b><br>
+      ・FAQの<b>条件値</b>（試用期間/交通費等は就業規則反映）
+    </div>
+  </div>
+
+  <div class="pageitem">
+    <div class="name">⑦ お知らせ・ブログ一覧</div>
+    <div class="pts">
+      ・全20記事の<b>カテゴリ分け</b>（お知らせ/活動報告/決算/立ち上げ日記）<br>
+      ・サムネが正しく表示<br>
+      ・カテゴリタブ・ページャの動作
+    </div>
+  </div>
+
+  <div class="pageitem">
+    <div class="name">⑧ 記事個別（例：木の絆プロジェクト）</div>
+    <div class="pts">
+      ・<b>ちゃぶ台のご家族写真</b>を最終公開OKか<br>
+      ・本文に間違い・違和感がないか<br>
+      ・YouTube動画サムネ→クリックで再生
+    </div>
+  </div>
+
+  <div class="pageitem">
+    <div class="name">⑨ 情報公開</div>
+    <div class="pts">
+      ・<b>運営規程・重要事項説明書のPDFリンク</b>の差し替え（実際のPDFに）<br>
+      ・各種指針の<b>掲載項目</b>に過不足なし<br>
+      ・決算報告（2022〜2025）の年次
+    </div>
+  </div>
+
+  <div class="pageitem">
+    <div class="name">⑩ お問い合わせ</div>
+    <div class="pts">
+      ・<b>問い合わせ種別</b>のラジオボタン項目<br>
+      ・営業時間・連絡先の<b>表記</b><br>
+      ・送信ボタン（実装は7月以降）
+    </div>
+  </div>
+
+  <div class="pageitem">
+    <div class="name">⑪ プライバシーポリシー</div>
+    <div class="pts">
+      ・<b>雛形のままの記載</b>でいいか（要法務確認 or 専門家へ相談）<br>
+      ・取得個人情報のリスト<br>
+      ・社名・連絡先
+    </div>
+  </div>
+
+</div>
+
+<!-- フィードバック -->
+<div class="fb-box">
+  <h3>フィードバックをお願いします</h3>
+  <p>気になった点・直したい点・「これでOK」のご報告を、以下のいずれかでお知らせください。スクショ1枚＋一言コメントだけで十分です。</p>
+  <div class="channels">
+    <span>📱 LINE</span>
+    <span>📧 メール</span>
+    <span>📞 電話</span>
+  </div>
+  <p style="margin-top:8px;font-size:9pt;opacity:.9">期限：監査明けの 7月初旬までにいただけると、本番制作が予定通り進められます。お忙しいところ恐れ入りますが、よろしくお願いいたします。</p>
+</div>
+
+<div class="foot">
+  <div>制作・確認シート発行：<span class="made">永澤幹太</span></div>
+  <div>本シート v1.0 ／ 2026-05-29</div>
+</div>
+
+</body>
+</html>
