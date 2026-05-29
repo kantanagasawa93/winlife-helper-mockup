@@ -16,15 +16,11 @@
 <meta property="og:image:alt" content="訪問介護（介護保険）｜ウインライフ ヘルパーステーション">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/common.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--rose:#D6587E;--rose-deep:#B23E63;--greige:#7A6E66;--base:#FBF7F4;--tint:#F6ECEF;--neutral:#F4F1EE;--ink:#2E2A28;--tel:#E8843C;}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--base);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased}
 .wrap{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
-a{color:inherit}
 .lphead{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #f0e3e7}
 .lphead .row{width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:flex;align-items:center;justify-content:space-between;height:58px}
 .lphead .logo{font-weight:900;color:var(--rose-deep);font-size:15px;text-decoration:none;white-space:nowrap}
@@ -56,62 +52,6 @@ a{color:inherit}
 .related{display:flex;gap:14px;flex-wrap:wrap;padding-bottom:40px}
 .related a{flex:1;min-width:200px;background:#fff;border:1px solid #eedde2;border-radius:12px;padding:16px;text-decoration:none;font-weight:700;color:var(--rose-deep)}
 .related a:hover{background:var(--tint)}
-.mocknote{background:#332;color:#ffd;text-align:center;padding:8px;font-size:13px;font-weight:700}
-.mocknote a{color:#ffd}
-footer{position:relative;margin-top:64px;background:linear-gradient(180deg,#F7D3E0,#F0BCD0);color:#8a4f62;padding:60px 0 40px;font-size:14px;text-align:center}
-footer::before{content:"";position:absolute;left:0;right:0;top:-58px;height:72px;pointer-events:none;filter:blur(3px);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2240' height='72' viewBox='0 0 2240 72' preserveAspectRatio='none'%3E%3Cpath d='M0 72 L0 8.1 L16 9.1 L32 11.0 L48 13.6 L64 16.6 L80 19.3 L96 21.4 L112 22.6 L128 22.9 L144 22.5 L160 21.9 L176 21.4 L192 21.6 L208 22.5 L224 24.1 L240 26.1 L256 28.1 L272 29.9 L288 31.0 L304 31.5 L320 31.6 L336 31.4 L352 31.3 L368 31.6 L384 32.2 L400 33.1 L416 34.0 L432 34.8 L448 35.2 L464 35.3 L480 35.2 L496 35.5 L512 36.5 L528 38.4 L544 41.6 L560 45.7 L576 50.5 L592 55.4 L608 59.9 L624 63.4 L640 65.8 L656 67.1 L672 67.6 L688 67.6 L704 67.6 L720 67.8 L736 68.4 L752 69.1 L768 69.8 L784 70.1 L800 70.1 L816 69.5 L832 68.7 L848 67.9 L864 67.4 L880 67.3 L896 67.7 L912 68.4 L928 69.0 L944 69.1 L960 68.3 L976 66.6 L992 64.0 L1008 61.0 L1024 57.8 L1040 55.2 L1056 53.2 L1072 52.2 L1088 51.8 L1104 51.9 L1120 51.8 L1136 51.2 L1152 49.8 L1168 47.6 L1184 44.8 L1200 41.8 L1216 38.7 L1232 36.0 L1248 33.8 L1264 31.9 L1280 30.1 L1296 28.4 L1312 26.6 L1328 24.7 L1344 23.0 L1360 21.7 L1376 21.4 L1392 22.2 L1408 24.3 L1424 27.2 L1440 30.8 L1456 34.3 L1472 37.3 L1488 39.4 L1504 40.4 L1520 40.5 L1536 40.1 L1552 39.4 L1568 39.0 L1584 39.1 L1600 39.7 L1616 40.5 L1632 41.3 L1648 41.9 L1664 41.8 L1680 41.2 L1696 40.2 L1712 39.1 L1728 38.0 L1744 37.3 L1760 36.9 L1776 36.6 L1792 36.3 L1808 35.5 L1824 34.1 L1840 32.0 L1856 29.5 L1872 26.8 L1888 24.5 L1904 22.9 L1920 22.4 L1936 22.9 L1952 24.2 L1968 25.7 L1984 27.0 L2000 27.6 L2016 27.3 L2032 26.0 L2048 24.0 L2064 21.7 L2080 19.4 L2096 17.4 L2112 15.8 L2128 14.6 L2144 13.6 L2160 12.5 L2176 11.3 L2192 10.0 L2208 8.9 L2224 8.1 L2240 8.1 L2240 72 Z' fill='%23FBE2EC'/%3E%3C/svg%3E") repeat-x bottom;background-size:2240px 72px;animation:footerwave2 90s linear infinite}
-footer::after{content:"";position:absolute;left:0;right:0;top:-44px;height:64px;pointer-events:none;filter:blur(2px);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='64' viewBox='0 0 1920 64' preserveAspectRatio='none'%3E%3Cpath d='M0 64 L0 6.1 L16 6.2 L32 8.0 L48 11.0 L64 14.7 L80 18.3 L96 21.1 L112 22.8 L128 23.2 L144 22.8 L160 22.1 L176 21.6 L192 21.7 L208 22.8 L224 24.5 L240 26.5 L256 28.3 L272 29.4 L288 29.6 L304 28.8 L320 27.4 L336 25.7 L352 24.1 L368 23.1 L384 22.6 L400 22.4 L416 22.1 L432 21.5 L448 20.2 L464 18.3 L480 16.2 L496 14.2 L512 13.2 L528 13.6 L544 15.7 L560 19.2 L576 23.7 L592 28.5 L608 32.7 L624 35.6 L640 36.9 L656 36.5 L672 35.0 L688 32.7 L704 30.4 L720 28.6 L736 27.5 L752 27.0 L768 26.9 L784 26.9 L800 26.6 L816 26.2 L832 25.7 L848 25.4 L864 25.9 L880 27.2 L896 29.5 L912 32.5 L928 35.7 L944 38.4 L960 40.1 L976 40.4 L992 39.3 L1008 37.1 L1024 34.5 L1040 32.2 L1056 30.9 L1072 30.9 L1088 32.3 L1104 34.6 L1120 37.5 L1136 40.1 L1152 42.2 L1168 43.5 L1184 44.1 L1200 44.3 L1216 44.8 L1232 45.9 L1248 47.8 L1264 50.7 L1280 54.0 L1296 57.5 L1312 60.6 L1328 63.0 L1344 64.7 L1360 65.9 L1376 67.0 L1392 68.1 L1408 69.7 L1424 71.7 L1440 73.7 L1456 75.2 L1472 75.5 L1488 74.2 L1504 71.1 L1520 66.3 L1536 60.2 L1552 53.8 L1568 47.8 L1584 42.9 L1600 39.6 L1616 37.7 L1632 37.1 L1648 37.0 L1664 37.0 L1680 36.6 L1696 35.4 L1712 33.7 L1728 31.7 L1744 29.7 L1760 28.0 L1776 26.7 L1792 25.6 L1808 24.4 L1824 22.8 L1840 20.5 L1856 17.4 L1872 13.9 L1888 10.4 L1904 7.6 L1920 6.1 L1920 64 Z' fill='%23F7D3E0'/%3E%3C/svg%3E") repeat-x bottom;background-size:1920px 64px;animation:footerwave 70s linear infinite}
-@keyframes footerwave{from{background-position:0 100%}to{background-position:1920px 100%}}
-@keyframes footerwave2{from{background-position:0 100%}to{background-position:-2240px 100%}}
-@media(prefers-reduced-motion:reduce){footer::before,footer::after{animation:none}}
-footer strong{color:var(--rose-deep)}
-footer a{color:var(--rose-deep);font-weight:700}
-
-/* === 共通グローバルナビ（ハンバーガー固定・社名中央） === */
-.nav{position:relative;z-index:30;background:transparent;border-bottom:none}
-.navbar .row{width:100%;max-width:none;margin:0 auto;padding:0 clamp(20px,5vw,56px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px;gap:14px}
-.navtoggle{justify-self:end;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--tint);border:0;font-size:27px;color:var(--rose-deep);cursor:pointer;line-height:1;position:relative;z-index:60;transition:background .2s}
-.navtoggle:hover{background:#f0d9e1}
-.logo{grid-column:2;justify-self:center;font-weight:900;color:var(--rose-deep);font-size:clamp(15px,2.3vw,21px);white-space:nowrap;text-decoration:none;letter-spacing:.12em}
-.navspacer{display:none}
-.navtop-right{grid-column:3;justify-self:end;display:flex;align-items:center;gap:10px}
-.htel{display:inline-flex;align-items:center;gap:7px;background:var(--rose-deep);color:#fff;padding:9px 16px;border-radius:999px;font-weight:700;text-decoration:none;font-size:15px;white-space:nowrap}
-.ico-tel{width:16px;height:16px}
-.menu li.telitem a .ico-tel{vertical-align:-3px;margin-right:4px}
-.nav.open::after{content:"";position:fixed;inset:0;background:rgba(46,42,40,.4);z-index:48}
-.menu{position:fixed;top:0;right:0;left:auto;bottom:0;width:min(420px,84vw);z-index:50;list-style:none;display:flex;flex-direction:column;align-items:stretch;background:#fff;padding:74px 22px 28px;overflow-y:auto;transform:translateX(100%);transition:transform .3s ease;box-shadow:-12px 0 40px rgba(0,0,0,.14)}
-.nav.open .menu{transform:none}
-.menu>li{position:relative}
-.menu>li>a{display:block;text-decoration:none;color:var(--ink);font-weight:700;padding:14px 6px;border-bottom:1px solid #f3e7eb;font-size:17px}
-.menu>li>a.hot{color:var(--rose-deep)}
-.has-sub>a:after{content:"\25BE";float:right;color:var(--rose)}
-.submenu{list-style:none;padding:2px 0 10px 16px}
-.submenu li a{display:block;text-decoration:none;color:var(--greige);padding:9px 6px;font-size:14px}
-.submenu li a:hover{color:var(--rose-deep)}
-.menu li.telitem a{display:inline-block;margin-top:16px;background:var(--rose-deep);color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;border-bottom:0;text-align:center}
-@media(max-width:600px){ .htel{display:none} .logo{letter-spacing:.04em;font-size:14px} }
-
-/* === 左右のピンク波（mie風：ぼかした柔らかい滲み。中央へ透明フェード） === */
-.sidewave{position:fixed;top:0;bottom:0;width:clamp(90px,15vw,260px);z-index:2;pointer-events:none;
-  background-repeat:repeat-y;background-position:left top;background-size:100% 280px;
-  filter:blur(14px);opacity:.5;animation:sidewaveflow 18s linear infinite;
-  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 10%,#000 90%,transparent);
-          mask-image:linear-gradient(to bottom,transparent,#000 10%,#000 90%,transparent)}
-.sidewave.l{left:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='280' viewBox='0 0 260 280' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23E58AAA' stop-opacity='0.95'/%3E%3Cstop offset='0.55' stop-color='%23F0AEC4' stop-opacity='0.55'/%3E%3Cstop offset='1' stop-color='%23F0AEC4' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 0 H170 C120 47 210 93 170 140 C120 187 210 233 170 280 H0 Z' fill='url(%23g)'/%3E%3C/svg%3E")}
-.sidewave.r{right:0;transform:scaleX(-1);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='280' viewBox='0 0 260 280' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23E58AAA' stop-opacity='0.95'/%3E%3Cstop offset='0.55' stop-color='%23F0AEC4' stop-opacity='0.55'/%3E%3Cstop offset='1' stop-color='%23F0AEC4' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 0 H170 C120 47 210 93 170 140 C120 187 210 233 170 280 H0 Z' fill='url(%23g)'/%3E%3C/svg%3E")}
-@media(max-width:1024px){ .sidewave{width:clamp(60px,18vw,150px);opacity:.42} }
-@media(max-width:640px){ .sidewave{display:none} }
-@keyframes sidewaveflow{from{background-position:left 0}to{background-position:left 280px}}
-@media(prefers-reduced-motion:reduce){ .sidewave{animation:none} }
-
-/* === A11y === */
-:focus-visible{outline:3px solid var(--rose);outline-offset:2px;border-radius:4px}
-.navtoggle:focus-visible{outline-offset:3px}
-.skiplink{position:absolute;left:8px;top:-44px;background:var(--rose-deep);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;z-index:200;transition:top .2s}
-.skiplink:focus{top:8px}
-
 </style>
 </head>
 <body>
