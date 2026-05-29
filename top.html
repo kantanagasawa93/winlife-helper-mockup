@@ -56,8 +56,8 @@ h2{font-size:32px;font-weight:900;line-height:1.4;margin-bottom:8px;text-align:c
 h2 .sub{display:block;font-size:clamp(24px,3.8vw,40px);font-weight:900;color:var(--rose);letter-spacing:.06em;line-height:1.05;margin-bottom:8px}
 .lead{color:var(--greige);text-align:center;margin-bottom:36px;font-size:15px;line-height:1.85}
 .btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:15px 26px;font-size:16px;font-weight:700;text-decoration:none;border:none;cursor:pointer;min-height:54px}
-.btn-rose{background:var(--rose);color:#fff}
-.btn-tel{background:var(--tel);color:#fff}
+.btn-rose{background:var(--rose-deep);color:#fff}
+.btn-tel{background:#A85217;color:#fff}
 .btn-ghost{background:#fff;color:var(--rose-deep);border:2px solid var(--rose)}
 .ph{background:repeating-linear-gradient(45deg,#efe3e6,#efe3e6 12px,#f6ecef 12px,#f6ecef 24px);
   border:1px dashed #d8b9c3;border-radius:16px;display:flex;align-items:center;justify-content:center;
@@ -225,9 +225,8 @@ footer a{color:#fff}
 .navtoggle:focus-visible{outline-offset:3px}
 .skiplink{position:absolute;left:8px;top:-44px;background:var(--rose-deep);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;z-index:200;transition:top .2s}
 .skiplink:focus{top:8px}
-/* hero CTA はコントラスト確保のため深い色を使う（Lighthouse 4.5:1 基準） */
-.hero .btn-rose{background:var(--rose-deep)}
-.hero .btn-tel{background:#C46A1F}
+/* greige の本文（.lead）を neutral 背景でも 4.5:1 を確保 */
+.flow .lead{color:#62554D}
 </style>
 </head>
 <body>
