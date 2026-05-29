@@ -61,21 +61,6 @@ a{color:inherit}
 .menu li.telitem a .ico-tel{vertical-align:-3px;margin-right:4px}
 @media(max-width:600px){ .htel{display:none} .logo{letter-spacing:.04em;font-size:14px} }
 
-/* === 左右のピンク波（mie風・全ページ共通） ====================== */
-.sidewave{position:fixed;top:0;bottom:0;width:clamp(90px,15vw,260px);z-index:2;pointer-events:none;
-  background-repeat:repeat-y;background-position:left top;background-size:100% 280px;
-  filter:blur(14px);opacity:.5;animation:sidewaveflow 18s linear infinite;
-  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 10%,#000 90%,transparent);
-          mask-image:linear-gradient(to bottom,transparent,#000 10%,#000 90%,transparent)}
-.sidewave.l{left:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='280' viewBox='0 0 260 280' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23E58AAA' stop-opacity='0.95'/%3E%3Cstop offset='0.55' stop-color='%23F0AEC4' stop-opacity='0.55'/%3E%3Cstop offset='1' stop-color='%23F0AEC4' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 0 H170 C120 47 210 93 170 140 C120 187 210 233 170 280 H0 Z' fill='url(%23g)'/%3E%3C/svg%3E")}
-.sidewave.r{right:0;transform:scaleX(-1);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='280' viewBox='0 0 260 280' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23E58AAA' stop-opacity='0.95'/%3E%3Cstop offset='0.55' stop-color='%23F0AEC4' stop-opacity='0.55'/%3E%3Cstop offset='1' stop-color='%23F0AEC4' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0 0 H170 C120 47 210 93 170 140 C120 187 210 233 170 280 H0 Z' fill='url(%23g)'/%3E%3C/svg%3E")}
-@media(max-width:1024px){ .sidewave{width:clamp(60px,18vw,150px);opacity:.42} }
-@media(max-width:640px){ .sidewave{display:none} }
-@keyframes sidewaveflow{from{background-position:left 0}to{background-position:left 280px}}
-@media(prefers-reduced-motion:reduce){ .sidewave{animation:none} }
-
 /* === フッター（波装飾・全ページ共通） ========================== */
 footer{position:relative;margin-top:64px;background:linear-gradient(180deg,#F7D3E0,#F0BCD0);color:#8a4f62;padding:60px 0 40px;font-size:14px;text-align:center}
 footer::before{content:"";position:absolute;left:0;right:0;top:-58px;height:72px;pointer-events:none;filter:blur(3px);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2240' height='72' viewBox='0 0 2240 72' preserveAspectRatio='none'%3E%3Cpath d='M0 72 L0 8.1 L16 9.1 L32 11.0 L48 13.6 L64 16.6 L80 19.3 L96 21.4 L112 22.6 L128 22.9 L144 22.5 L160 21.9 L176 21.4 L192 21.6 L208 22.5 L224 24.1 L240 26.1 L256 28.1 L272 29.9 L288 31.0 L304 31.5 L320 31.6 L336 31.4 L352 31.3 L368 31.6 L384 32.2 L400 33.1 L416 34.0 L432 34.8 L448 35.2 L464 35.3 L480 35.2 L496 35.5 L512 36.5 L528 38.4 L544 41.6 L560 45.7 L576 50.5 L592 55.4 L608 59.9 L624 63.4 L640 65.8 L656 67.1 L672 67.6 L688 67.6 L704 67.6 L720 67.8 L736 68.4 L752 69.1 L768 69.8 L784 70.1 L800 70.1 L816 69.5 L832 68.7 L848 67.9 L864 67.4 L880 67.3 L896 67.7 L912 68.4 L928 69.0 L944 69.1 L960 68.3 L976 66.6 L992 64.0 L1008 61.0 L1024 57.8 L1040 55.2 L1056 53.2 L1072 52.2 L1088 51.8 L1104 51.9 L1120 51.8 L1136 51.2 L1152 49.8 L1168 47.6 L1184 44.8 L1200 41.8 L1216 38.7 L1232 36.0 L1248 33.8 L1264 31.9 L1280 30.1 L1296 28.4 L1312 26.6 L1328 24.7 L1344 23.0 L1360 21.7 L1376 21.4 L1392 22.2 L1408 24.3 L1424 27.2 L1440 30.8 L1456 34.3 L1472 37.3 L1488 39.4 L1504 40.4 L1520 40.5 L1536 40.1 L1552 39.4 L1568 39.0 L1584 39.1 L1600 39.7 L1616 40.5 L1632 41.3 L1648 41.9 L1664 41.8 L1680 41.2 L1696 40.2 L1712 39.1 L1728 38.0 L1744 37.3 L1760 36.9 L1776 36.6 L1792 36.3 L1808 35.5 L1824 34.1 L1840 32.0 L1856 29.5 L1872 26.8 L1888 24.5 L1904 22.9 L1920 22.4 L1936 22.9 L1952 24.2 L1968 25.7 L1984 27.0 L2000 27.6 L2016 27.3 L2032 26.0 L2048 24.0 L2064 21.7 L2080 19.4 L2096 17.4 L2112 15.8 L2128 14.6 L2144 13.6 L2160 12.5 L2176 11.3 L2192 10.0 L2208 8.9 L2224 8.1 L2240 8.1 L2240 72 Z' fill='%23FBE2EC'/%3E%3C/svg%3E") repeat-x bottom;background-size:2240px 72px;animation:footerwave2 90s linear infinite}
